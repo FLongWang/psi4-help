@@ -21,6 +21,7 @@ Psi4-help is a Python script designed to help users explore and understand the k
 
    ```sh
    pip install psi4-help
+   ```
 
 or
 
@@ -29,15 +30,17 @@ or
    ```sh
    git clone https://github.com/FLongWang/psi4-help.git
    cd psi4-help
+   ```
 2. ```sh
    pip install .
-
+   ```
 ## usage
 
 Command-Line Interface
 After installation, you can start psi4-help by running the following command:
    ```sh
    psi-help
+   ```
 Upon starting `psi4-help`, you will be presented with an interactive command-line interface. Below are the available commands and their functionalities:
 - **`help` or `?`**:
   - Display help information for all available commands.
