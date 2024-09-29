@@ -39,7 +39,7 @@ or
 Command-Line Interface
 After installation, you can start psi4-help by running the following command:
    ```sh
-   psi-help
+   psi4-help
    ```
 Upon starting `psi4-help`, you will be presented with an interactive command-line interface. Below are the available commands and their functionalities:
 - **`help` or `?`**:
