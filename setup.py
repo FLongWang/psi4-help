@@ -28,9 +28,9 @@ setup(
     description="A helper script for Psi4 keywords",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/yourusername/psi4-help",
+    url="https://github.com/FLongWang/psi4-help",
     packages=find_packages(),
-    package_data=package_data,  # 添加数据文件
+    package_data=package_data,
     include_package_data=True,
     classifiers=[
         "Programming Language :: Python :: 3",
