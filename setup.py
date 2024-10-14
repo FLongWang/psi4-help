@@ -7,13 +7,8 @@ with open("README.md", "r", encoding="utf-8") as fh:
 here = os.path.abspath(os.path.dirname(__file__))
 
 package_data = {
-    'psi4_help': ['psi4_keywords.yaml'], 
+    'psi4_help': ['psi4_keywords.yaml','psi4_api_class.yaml'],
 }
-
-def run_psi4_help():
-    from psi4_help.psi4_help import Psi4KeywordsCLI
-    cli = Psi4KeywordsCLI()
-    cli.cmdloop()
 
 entry_points = {
     'console_scripts': [

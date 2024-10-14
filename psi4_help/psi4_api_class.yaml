@@ -1,0 +1,4375 @@
+ps4.driver:
+  atomiccomputer:
+    description: Computer for analytic single-geometry computations.
+    element: null
+  convergenceerror:
+    description: Error called for problems with converging an iterative method.
+    element: null
+  empiricaldispersion:
+    description: Lightweight unification of empirical dispersion calculation modes.
+    element:
+      compute_energy:
+      - compute_energy(molecule[,wfn])
+      - Compute dispersion energy based on engine, dispersion level, and parameters
+        in <cite>self</cite>.
+      compute_gradient:
+      - compute_gradient(molecule[,wfn])
+      - Compute dispersion gradient based on engine, dispersion level, and parameters
+        in <cite>self</cite>.
+      compute_hessian:
+      - compute_hessian(molecule[,wfn])
+      - Compute dispersion Hessian based on engine, dispersion level, and parameters
+        in <cite>self</cite>.
+      print_out:
+      - print_out()
+      - Format dispersion parameters of <cite>self</cite> for output file.
+  managedmethoderror:
+    description: Error called when a requested level of theory and derivative level
+      are nominally available but not for the particular conditions (e.g., reference,
+      algorithm, active orbitals, QC module, etc.) requested.
+    element: null
+  missingmethoderror:
+    description: Error called when requested level or theory or derivative level are
+      not available.
+    element: null
+  optimizationconvergenceerror:
+    description: Error called for problems with geometry optimizer.
+    element: null
+  parsingerror:
+    description: Error called for problems parsing a text file.
+    element: null
+  pasturerequirederror:
+    description: Error called when the specified value of option requires some module(s)
+      from Psi4Pasture, but could not be imported.
+    element: null
+  psiexception:
+    description: Error class for PSI4.
+    element: null
+  qmmm:
+    description: Hold charges and psi4.core.ExternalPotential.
+    element: null
+  qmmmbohr:
+    description: Hold charges and psi4.core.ExternalPotential.
+    element:
+      addchargeangstrom:
+      - addChargeAngstrom(Q,x,y,z)
+      - Function to add a point charge of magnitude <em>Q</em> at position (<em>x</em>,
+        <em>y</em>, <em>z</em>) Angstroms.
+      addchargebohr:
+      - addChargeBohr(Q,x,y,z)
+      - Function to add a point charge of magnitude <em>Q</em> at position (<em>x</em>,
+        <em>y</em>, <em>z</em>) Bohr.
+      adddiffuse:
+      - addDiffuse(diffuse)
+      - Function to add a diffuse charge field <em>diffuse</em>.
+      populateextern:
+      - populateExtern()
+      - Function to define a charge field external to the molecule through point and
+        diffuse charges.
+  scfconvergenceerror:
+    description: Error called for problems with SCF iterations.
+    element: null
+  tdscfconvergenceerror:
+    description: Error called for problems with TDSCF iterations.
+    element: null
+  testcomparisonerror:
+    description: Error called when a compare_values() or other comparison function
+      fails.
+    element: null
+  upgradehelper:
+    description: Error called on previously valid syntax that now isn't and a simple
+      syntax transition is possible.
+    element: null
+  validationerror:
+    description: Input specification has problems.
+    element: null
+psi4.core:
+  angularmomentumint:
+    description: Computes angular momentum integrals
+    element: null
+  aoshellcombinationsiterator:
+    description: ''
+    element:
+      first:
+      - first(self)
+      - Returns current P index
+      is_done:
+      - is_done(self)
+      - Returns current Q index
+      next:
+      - next(self)
+      - Returns current R index
+  basisextents:
+    description: docstring
+    element:
+      basis:
+      - basis(self)
+      - docstring
+      delta:
+      - delta(self)
+      - docstring
+      maxr:
+      - maxR(self)
+      - docstring
+      set_delta:
+      - set_delta(self,arg0)
+      - docstring
+      shell_extents:
+      - shell_extents(self)
+      - docstring
+  basisfunctions:
+    description: docstring
+    element:
+      basis_values:
+      - basis_values(self)
+      - docstring
+      compute_functions:
+      - compute_functions(self,arg0)
+      - docstring
+      deriv:
+      - deriv(self)
+      - docstring
+      max_functions:
+      - max_functions(self)
+      - docstring
+      max_points:
+      - max_points(self)
+      - docstring
+      set_deriv:
+      - set_deriv(self,arg0)
+      - docstring
+  basisset:
+    description: Contains basis set information
+    element:
+      ao_to_shell:
+      - ao_to_shell(self,i)
+      - Given a cartesian function (AO) number what shell does it correspond to
+      blend:
+      - blend(self)
+      - Plus-separated string of [basisname] values
+      build:
+      - build(mol[,key,target,fitrole,other,...])
+      - Build a primary or auxiliary basis set.
+      compute_phi:
+      - compute_phi(self,arg0,arg1,arg2)
+      - Calculate the value of all basis functions at a given point x, y, and z
+      construct_from_pydict:
+      - construct_from_pydict(arg0,arg1,arg2)
+      - docstring
+      ecp_shell:
+      - ecp_shell(self,si)
+      - Return the si'th ECP shell
+      ecp_shell_on_center:
+      - ecp_shell_on_center(self,c,i)
+      - Return the i'th ECP shell on center.
+      function_to_center:
+      - function_to_center(self,i)
+      - The atomic center for the i'th function
+      function_to_shell:
+      - function_to_shell(self,i)
+      - Given a function number what shell does it correspond to
+      genbas:
+      - genbas(self)
+      - Returns basis set per atom in CFOUR format
+      has_ecp:
+      - has_ECP(self)
+      - Whether this basis set object has an ECP associated with it.
+      has_puream:
+      - has_puream(self)
+      - Spherical harmonics?
+      make_filename:
+      - make_filename(arg0)
+      - 'Returns filename for basis name: pluses, stars, parentheses replaced and
+        gbs extension added'
+      max_am:
+      - max_am(self)
+      - Returns maximum angular momentum used
+      max_function_per_shell:
+      - max_function_per_shell(self)
+      - The max number of basis functions in a shell
+      max_nprimitive:
+      - max_nprimitive(self)
+      - The max number of primitives in a shell
+      molecule:
+      - molecule(self)
+      - Molecule object
+      move_atom:
+      - move_atom(self,arg0,arg1)
+      - Translate a given atom by a given amount.
+      n_ecp_core:
+      - n_ecp_core(*args,**kwargs)
+      - Overloaded function.
+      n_ecp_shell_on_center:
+      - n_ecp_shell_on_center(self,i)
+      - Return the number of ECP shells on a given center
+      n_frozen_core:
+      - n_frozen_core(self[,local,molecule])
+      - Returns the number of orbital (non-ECP) frozen core electrons.
+      name:
+      - name(self)
+      - Callback handle, may represent string or function
+      nao:
+      - nao(self)
+      - Returns number of atomic orbitals (Cartesian)
+      nbf:
+      - nbf(self)
+      - Returns number of basis functions (Cartesian or spherical depending on has_puream)
+      nprimitive:
+      - nprimitive(self)
+      - Returns total number of primitives in all contractions
+      nshell:
+      - nshell(self)
+      - Returns number of shells
+      nshell_on_center:
+      - nshell_on_center(self,i)
+      - Return the number of shells on a given center
+      print_detail_out:
+      - print_detail_out(self)
+      - Prints detailed basis set info to outfile
+      print_out:
+      - print_out(self)
+      - Prints basis set info to outfile
+      shell:
+      - shell(*args,**kwargs)
+      - Overloaded function.
+      shell_on_center:
+      - shell_on_center(self,c,i)
+      - Return the i'th shell on center.
+      shell_to_ao_function:
+      - shell_to_ao_function(self,i)
+      - Return the function number for the first function for the i'th shell
+      shell_to_basis_function:
+      - shell_to_basis_function(self,i)
+      - Given a shell return its first basis function
+      shell_to_center:
+      - shell_to_center(self,i)
+      - Return the atomic center for the i'th shell
+      zero_ao_basis_set:
+      - zero_ao_basis_set()
+      - Returns a BasisSet object that actually has a single s-function at the origin
+        with an exponent of 0.0 and contraction of 1.0.
+  blockopoints:
+    description: docstring
+    element:
+      functions_local_to_global:
+      - functions_local_to_global(self)
+      - docstring
+      npoints:
+      - npoints(self)
+      - docstring
+      parent_atom:
+      - parent_atom(self)
+      - Returns the atom number this BlockOfPoints belongs to.
+      print_out:
+      - print_out(self[,out_fname,print])
+      - docstring
+      refresh:
+      - refresh(self)
+      - docstring
+      shells_local_to_global:
+      - shells_local_to_global(self)
+      - docstring
+      w:
+      - w(self)
+      - None
+      x:
+      - x(self)
+      - None
+      y:
+      - y(self)
+      - None
+      z:
+      - z(self)
+      - None
+  boyslocalizer:
+    description: Performs Boys orbital localization
+    element: null
+  bsvec:
+    description: ''
+    element:
+      append:
+      - append(self,x)
+      - Add an item to the end of the list
+      clear:
+      - clear(self)
+      - Clear the contents
+      count:
+      - count(self,x)
+      - Return the number of times <code class="docutils literal notranslate"><span
+        class="pre">x</span></code> appears in the list
+      extend:
+      - extend(*args,**kwargs)
+      - Overloaded function.
+      insert:
+      - insert(self,i,x)
+      - Insert an item at a given position.
+      pop:
+      - pop(*args,**kwargs)
+      - Overloaded function.
+      remove:
+      - remove(self,x)
+      - Remove the first item from the list whose value is x.
+  ccwavefunction:
+    description: Specialized Wavefunction used by the ccenergy, cceom, ccgradient,
+      etc.
+    element:
+      get_amplitudes:
+      - get_amplitudes(self)
+      - Get dict of converged T amplitudes.
+      total_index:
+      - total_index(self,i,h)
+      - Map an index (i) within irrep (h) to its energy-sorted index among all roots.
+  cdsalc:
+    description: Cartesian displacement SALC
+    element:
+      irrep:
+      - irrep(self)
+      - Return the irrep bit representation
+      irrep_index:
+      - irrep_index(self)
+      - Return the irrep index
+      print_out:
+      - print_out(self)
+      - Print the irrep index and the coordinates of the SALC of Cartesian displacements.
+  cdsalclist:
+    description: Class for generating symmetry adapted linear combinations of Cartesian
+      displacements
+    element:
+      create_matrices:
+      - create_matrices(self,basename,factory)
+      - Return a vector of matrices with the SALC symmetries.
+      matrix:
+      - matrix(self)
+      - Return the matrix that transforms Cartesian displacements to SALCs
+      matrix_irrep:
+      - matrix_irrep(self,h)
+      - Return the matrix that transforms Cartesian displacements to SALCs of irrep
+        h
+      ncd:
+      - ncd(self)
+      - Return the number of cartesian displacements SALCs
+      nirrep:
+      - nirrep(self)
+      - Return the number of irreps
+      print_out:
+      - print_out(self)
+      - Print the SALCs to the output file
+      salc_name:
+      - salc_name(self,i)
+      - 'Return the name of SALC #i.'
+  charactertable:
+    description: Contains the character table of the point group
+    element:
+      gamma:
+      - gamma(self,arg0)
+      - Returns the irrep with the given index in the character table
+      order:
+      - order(self)
+      - Return the order of the point group
+      symm_operation:
+      - symm_operation(self,arg0)
+      - Return the i'th symmetry operation.
+  civector:
+    description: docstring
+    element:
+      axpy:
+      - axpy(self,arg0,arg1,arg2,arg3)
+      - Returns a view of the CIVector's buffer
+      close_io_files:
+      - close_io_files(self,arg0)
+      - docstring
+      copy:
+      - copy(self,arg0,arg1,arg2)
+      - docstring
+      dcalc:
+      - dcalc(self,arg0,arg1,arg2)
+      - docstring
+      divide:
+      - divide(self,arg0,arg1,arg2,arg3)
+      - docstring
+      init_io_files:
+      - init_io_files(self,arg0)
+      - docstring
+      norm:
+      - norm(self,arg0)
+      - docstring
+      read:
+      - read(self,arg0,arg1)
+      - docstring
+      scale:
+      - scale(self,arg0,arg1)
+      - docstring
+      set_nvec:
+      - set_nvec(self,arg0)
+      - docstring
+      shift:
+      - shift(self,arg0,arg1)
+      - docstring
+      symnormalize:
+      - symnormalize(self,arg0,arg1)
+      - docstring
+      vdot:
+      - vdot(self,arg0,arg1,arg2)
+      - docstring
+      vector_multiply:
+      - vector_multiply(self,arg0,arg1,arg2,...)
+      - docstring
+      write:
+      - write(self,arg0,arg1)
+      - docstring
+      zero:
+      - zero(self)
+      - docstring
+  ciwavefunction:
+    description: docstring
+    element:
+      ci_nat_orbs:
+      - ci_nat_orbs(self)
+      - docstring
+      cleanup_ci:
+      - cleanup_ci(self)
+      - docstring
+      cleanup_dpd:
+      - cleanup_dpd(self)
+      - docstring
+      compute_state_transfer:
+      - compute_state_transfer(self,arg0,arg1,...)
+      - docstring
+      d_vector:
+      - D_vector(self)
+      - docstring
+      diag_h:
+      - diag_h(self,arg0,arg1)
+      - docstring
+      form_opdm:
+      - form_opdm(self)
+      - docstring
+      form_tpdm:
+      - form_tpdm(self)
+      - docstring
+      get_dimension:
+      - get_dimension(self,arg0)
+      - Returns the dimension of requested orbital subspace.
+      get_opdm:
+      - get_opdm(self,Iroot,Jroot,spin,full_space)
+      - Returns the one-particle density or transition matrix.
+      get_orbitals:
+      - get_orbitals(self,arg0)
+      - docstring
+      get_tpdm:
+      - get_tpdm(self,spin,symmetrize)
+      - Returns the two-particle density matrix.
+      hamiltonian:
+      - hamiltonian(self,arg0)
+      - docstring
+      hd_vector:
+      - Hd_vector(self,arg0)
+      - docstring
+      mcscf_object:
+      - mcscf_object(self)
+      - docstring
+      ndet:
+      - ndet(self)
+      - docstring
+      new_civector:
+      - new_civector(self,arg0,arg1,arg2,arg3)
+      - docstring
+      opdm:
+      - opdm(self,arg0,arg1,arg2,arg3)
+      - docstring
+      pitzer_to_ci_order_onel:
+      - pitzer_to_ci_order_onel(self,arg0,arg1)
+      - docstring
+      pitzer_to_ci_order_twoel:
+      - pitzer_to_ci_order_twoel(self,arg0,arg1)
+      - docstring
+      print_vector:
+      - print_vector(self,arg0,arg1)
+      - docstring
+      reset_ci_h0block:
+      - reset_ci_H0block(self)
+      - docstring
+      rotate_mcscf_integrals:
+      - rotate_mcscf_integrals(self,arg0,arg1,arg2)
+      - docstring
+      semicanonical_orbs:
+      - semicanonical_orbs(self)
+      - docstring
+      set_ci_guess:
+      - set_ci_guess(self,arg0)
+      - docstring
+      set_orbitals:
+      - set_orbitals(self,arg0,arg1)
+      - docstring
+      sigma:
+      - sigma(*args,**kwargs)
+      - Overloaded function.
+      tpdm:
+      - tpdm(self,arg0,arg1,arg2,arg3)
+      - docstring
+      transform_ci_integrals:
+      - transform_ci_integrals(self)
+      - Transforms the one- and two-electron integrals for a CI computation.
+      transform_mcscf_integrals:
+      - transform_mcscf_integrals(self,arg0)
+      - docstring
+  compositejk:
+    description: docstring
+    element:
+      clear_d_prev:
+      - clear_D_prev(self)
+      - Clear previous D matrices.
+      do_incfock_iter:
+      - do_incfock_iter(self)
+      - Was the last Fock build incremental?
+      get_cosx_grid:
+      - get_COSX_grid(self)
+      - Return grid used for COSX for this SCF iteration.
+      get_snlink_max_am:
+      - get_snLinK_max_am(self)
+      - Return maximum AM supported by current GauXC instance, if GauXC support is
+        enabled.
+      set_cosx_grid:
+      - set_COSX_grid(self,arg0)
+      - Set grid to use for COSX for this SCF iteration.
+  correlationfactor:
+    description: docstring
+    element:
+      set_params:
+      - set_params(self,coeff,exponent)
+      - Set coefficient and exponent
+  correlationtable:
+    description: Provides a correlation table between two point groups
+    element:
+      degen:
+      - degen(self,arg0)
+      - Returns the degenercy of the irrep
+      group:
+      - group(*args,**kwargs)
+      - Overloaded function.
+      n:
+      - n(self)
+      - Returns the number of irreps in high order group
+      ngamma:
+      - ngamma(self,arg0)
+      - Returns the number of irreps in the low order group that an irrep              from
+        the high order group can be reduced to.
+      subdegen:
+      - subdegen(self,arg0)
+      - Returns the degeneracy of the subgroup irrep
+      subgroup:
+      - subgroup(self)
+      - Returns lower order pointgroup
+      subn:
+      - subn(self)
+      - Returns number of irreps in subgroup
+  cubeproperties:
+    description: docstring
+    element:
+      basisset:
+      - basisset(self)
+      - Returns orbital/primary basis set associated with cubeprop.
+      compute_density:
+      - compute_density(self,D,key)
+      - Compute and dump a cube file for a density matrix
+      compute_orbitals:
+      - compute_orbitals(self,C,indices,labels,key)
+      - Compute and dump a cube file for a set of orbitals
+      compute_properties:
+      - compute_properties()
+      - Filesystem wrapper for CubeProperties::raw_compute_properties.
+      raw_compute_properties:
+      - raw_compute_properties(self)
+      - Compute all relevant properties from options object specifications
+  cuhf:
+    description: docstring
+    element:
+      c1_deep_copy:
+      - c1_deep_copy(self,basis)
+      - Returns a new wavefunction with internal data converted to C_1 symmetry, using
+        pre-c1-constructed BasisSet <em>basis</em>
+      compute_orbital_gradient:
+      - compute_orbital_gradient(save_fock,...)
+      - docstring
+      diis:
+      - diis(self,arg0)
+      - docstring
+      mintshelper:
+      - mintshelper(self)
+      - The MintsHelper object
+  deriv:
+    description: Computes gradients of wavefunctions
+    element:
+      compute:
+      - compute(self,deriv_calc_type)
+      - Compute the gradient
+      compute_df:
+      - compute_df(self,arg0,arg1)
+      - Compute the density-fitted gradient
+      set_deriv_density_backtransformed:
+      - set_deriv_density_backtransformed(self[,val])
+      - Is the deriv_density already backtransformed? Default is False
+      set_ignore_reference:
+      - set_ignore_reference(self[,val])
+      - Ignore reference contributions to the gradient? Default is False
+      set_tpdm_presorted:
+      - set_tpdm_presorted(self[,val])
+      - Is the TPDM already presorted? Default is False
+  derivcalctype:
+    description: 'Members:'
+    element: null
+  dfep2wavefunction:
+    description: A density-fitted second-order Electron Propagator Wavefunction.
+    element:
+      compute:
+      - compute(self,arg0)
+      - Computes the density-fitted EP2 energy for the input orbitals
+  dfhelper:
+    description: docstring
+    element:
+      add_space:
+      - add_space(self,arg0,arg1)
+      - Overloaded function.
+      add_transformation:
+      - add_transformation(self,name,key1,key2[,...])
+      - None
+      clear_all:
+      - clear_all(self)
+      - None
+      clear_spaces:
+      - clear_spaces(self)
+      - None
+      get_ao_core:
+      - get_AO_core(self)
+      - None
+      get_ao_size:
+      - get_AO_size(self)
+      - None
+      get_memory:
+      - get_memory(self)
+      - None
+      get_method:
+      - get_method(self)
+      - None
+      get_mo_core:
+      - get_MO_core(self)
+      - None
+      get_schwarz_cutoff:
+      - get_schwarz_cutoff(self)
+      - None
+      get_space_size:
+      - get_space_size(self,arg0)
+      - None
+      get_tensor:
+      - get_tensor(*args,**kwargs)
+      - None
+      get_tensor_shape:
+      - get_tensor_shape(self,arg0)
+      - None
+      get_tensor_size:
+      - get_tensor_size(self,arg0)
+      - None
+      hold_met:
+      - hold_met(self,arg0)
+      - None
+      initialize:
+      - initialize(self)
+      - None
+      print_header:
+      - print_header(self)
+      - None
+      set_ao_core:
+      - set_AO_core(self,arg0)
+      - None
+      set_memory:
+      - set_memory(self,arg0)
+      - None
+      set_method:
+      - set_method(self,arg0)
+      - None
+      set_mo_core:
+      - set_MO_core(self,arg0)
+      - None
+      set_nthreads:
+      - set_nthreads(self,arg0)
+      - None
+      set_schwarz_cutoff:
+      - set_schwarz_cutoff(self,arg0)
+      - None
+      set_subalgo:
+      - set_subalgo(self,arg0)
+      - None
+      transform:
+      - transform(self)
+      - None
+      transpose:
+      - transpose(self,arg0,arg1)
+      - None
+  dfsomcscf:
+    description: docstring
+    element: null
+  dftensor:
+    description: docstring
+    element:
+      idfmo:
+      - Idfmo(self)
+      - doctsring
+      imo:
+      - Imo(self)
+      - doctsring
+      qmo:
+      - Qmo(self)
+      - doctsring
+      qoo:
+      - Qoo(self)
+      - doctsring
+      qov:
+      - Qov(self)
+      - doctsring
+      qso:
+      - Qso(self)
+      - doctsring
+      qvv:
+      - Qvv(self)
+      - doctsring
+  dftgrid:
+    description: docstring
+    element:
+      build:
+      - build(*args,**kwargs)
+      - Overloaded function.
+  diagonalizeorder:
+    description: Defines ordering of eigenvalues after diagonalization
+    element: null
+  dimension:
+    description: Initializes and defines Dimension Objects
+    element:
+      fill:
+      - fill(self,val)
+      - The name of the dimension.
+      from_list:
+      - from_list(dims[,name])
+      - Fill all elements with given value
+      init:
+      - init(self,arg0,arg1)
+      - Builds a Dimension object from a Python list or tuple.
+      max:
+      - max(*args,**kwargs)
+      - Re-initializes the dimension object
+      n:
+      - n(self)
+      - Overloaded function.
+      print_out:
+      - print_out(self)
+      - The order of the dimension
+      sum:
+      - sum(*args,**kwargs)
+      - Print out the dimension object to the output file
+      to_tuple:
+      - to_tuple()
+      - Overloaded function.
+      zero:
+      - zero(*args,**kwargs)
+      - Serializes <a class="reference internal" href="#psi4.core.Dimension" title="psi4.core.Dimension"><code
+        class="xref py py-class docutils literal notranslate"><span class="pre">Dimension</span></code></a>
+        to a tuple.
+  dipoleint:
+    description: Computes dipole integrals
+    element: null
+  directjk:
+    description: docstring
+    element:
+      do_incfock_iter:
+      - do_incfock_iter(self)
+      - Was the last Fock build incremental?
+  disksomcscf:
+    description: docstring
+    element: null
+  dispersion:
+    description: docstring
+    element:
+      a1:
+      - a1(self)
+      - docstring
+      a2:
+      - a2(self)
+      - docstring
+      bibtex:
+      - bibtex(self)
+      - Get the BibTeX key for the literature reference.
+      build:
+      - build(type[,s6,alpha6,sr6])
+      - Initialize instance capable of computing a dispersion correction of <em>type</em>
+      citation:
+      - citation(self)
+      - docstring
+      compute_energy:
+      - compute_energy(self,arg0)
+      - docstring
+      compute_gradient:
+      - compute_gradient(self,arg0)
+      - docstring
+      compute_hessian:
+      - compute_hessian(self,arg0)
+      - docstring
+      d:
+      - d(self)
+      - docstring
+      description:
+      - description(self)
+      - docstring
+      name:
+      - name(self)
+      - docstring
+      print_energy:
+      - print_energy(self,arg0)
+      - docstring
+      print_gradient:
+      - print_gradient(self,arg0)
+      - docstring
+      print_hessian:
+      - print_hessian(self,arg0)
+      - docstring
+      print_out:
+      - print_out(self)
+      - docstring
+      s6:
+      - s6(self)
+      - docstring
+      s8:
+      - s8(self)
+      - docstring
+      set_bibtex:
+      - set_bibtex(self,arg0)
+      - Set the BibTeX key for the literature reference.
+      set_citation:
+      - set_citation(self,arg0)
+      - docstring
+      set_description:
+      - set_description(self,arg0)
+      - docstring
+      set_name:
+      - set_name(self,arg0)
+      - docstring
+      sr6:
+      - sr6(self)
+      - docstring
+  dpdbuf4:
+    description: docstring
+    element:
+      axpy_matrix:
+      - axpy_matrix(self,arg0,arg1)
+      - Add 'a' times a Matrix to this.
+      coldim:
+      - coldim(self)
+      - Return the dimensions of the column index.
+      rowdim:
+      - rowdim(self)
+      - Return the dimensions of the row index.
+      zero:
+      - zero(self)
+      - Fill all with entries.
+  dpdfile2:
+    description: docstring
+    element:
+      axpy_matrix:
+      - axpy_matrix(self,arg0,arg1)
+      - Add 'a' times a Matrix to this.
+      coldim:
+      - coldim(self)
+      - Return the dimensions of the column index.
+      rowdim:
+      - rowdim(self)
+      - Return the dimensions of the row index.
+      zero:
+      - zero(self)
+      - Fill all entries with zeroes.
+  electricfieldint:
+    description: Computes electric field integrals
+    element: null
+  electrostaticint:
+    description: Computes electrostatic integrals
+    element: null
+  eri:
+    description: Computes normal two electron repulsion integrals
+    element: null
+  esppropcalc:
+    description: ESPPropCalc gives access to routines calculating the ESP on a grid
+    element:
+      compute_esp_over_grid_in_memory:
+      - compute_esp_over_grid_in_memory(self,arg0)
+      - Computes ESP on specified grid Nx3 (as SharedMatrix, in input units)
+      compute_field_over_grid_in_memory:
+      - compute_field_over_grid_in_memory(self,arg0)
+      - Computes field on specified grid Nx3 (as SharedMatrix, in input units)
+  externalpotential:
+    description: Stores external potential field, computes external potential matrix
+    element:
+      addbasis:
+      - addBasis(self,basis,coefs)
+      - Add a basis of S auxiliary functions iwth Df coefficients
+      addcharge:
+      - addCharge(self,Z,x,y,z)
+      - Add a charge Z at (x,y,z)
+      appendcharges:
+      - appendCharges(self,arg0)
+      - Append a vector of charge tuples to a current ExternalPotential
+      clear:
+      - clear(self)
+      - Reset the field to zero (eliminates all entries)
+      computeexternexterninteraction:
+      - computeExternExternInteraction(self,arg0)
+      - Compute the interaction between this potential and other external potential
+      computenuclearenergy:
+      - computeNuclearEnergy(self,arg0)
+      - Compute the contribution to the nuclear repulsion energy for the given molecule
+      computepotentialmatrix:
+      - computePotentialMatrix(self,basis)
+      - Compute the external potential matrix in the given basis set
+      getcharges:
+      - getCharges(self)
+      - Get the vector of charge tuples
+      gradient_on_charges:
+      - gradient_on_charges(self)
+      - Get the gradient on the embedded charges
+      print_out:
+      - print_out(self)
+      - Print python print helper to the outfile
+      setname:
+      - setName(self,arg0)
+      - Sets the name
+  fchkwriter:
+    description: Extracts information from a wavefunction object, and writes it to
+      an FCHK file
+    element:
+      scf_dtot:
+      - SCF_Dtot(self)
+      - Set base label for post-SCF density, e.g. ' CC Density'.
+      set_postscf_density_label:
+      - set_postscf_density_label(self,label)
+      - Write wavefunction information to file
+      write:
+      - write(self,filename)
+      - None
+  fdds_dispersion:
+    description: docstring
+    element:
+      aux_overlap:
+      - aux_overlap(self)
+      - Obtains the FDDS aux_overlap.
+      form_aux_matrices:
+      - form_aux_matrices(self,arg0,arg1)
+      - Forms the uncoupled amplitudes and other matrices for either monomer.
+      form_unc_amplitude:
+      - form_unc_amplitude(self,arg0,arg1)
+      - Forms the uncoupled amplitudes for either monomer.
+      get_tensor_pqq:
+      - get_tensor_pqQ(self,arg0,arg1)
+      - 'Debug only: fetches 3-index intermediate from disk and return as matrix.'
+      metric:
+      - metric(self)
+      - Obtains the FDDS metric.
+      metric_inv:
+      - metric_inv(self)
+      - Obtains the FDDS metric_inv.
+      print_tensor_pqq:
+      - print_tensor_pqQ(self,arg0,arg1,arg2)
+      - 'Debug only: prints formatted 3-index intermediate to file.'
+      project_densities:
+      - project_densities(self,arg0)
+      - Projects a density from the primary AO to auxiliary AO space.
+      r_a:
+      - R_A(self)
+      - Obtains (R^t)^-1 for monomer A.
+      r_b:
+      - R_B(self)
+      - Obtains (R^t)^-1 for monomer B.
+  fisapt:
+    description: A Fragment-SAPT Wavefunction
+    element:
+      coulomb:
+      - coulomb(self)
+      - Build the J/K potentials for C, D, and E.
+      dhf:
+      - dHF(self)
+      - SAPT0 delta HF.
+      disp:
+      - disp(self,arg0,arg1,arg2)
+      - Computes the MP2-based DispE20 and Exch-DispE20 energy.
+      do_cubes:
+      - do_cubes(self)
+      - Prepare cube files for orbital/density pictures.
+      elst:
+      - elst(self)
+      - SAPT0 electrostatics.
+      exch:
+      - exch(self)
+      - SAPT0 exchange.
+      fdisp:
+      - fdisp(self)
+      - F-SAPT0 dispersion.
+      felst:
+      - felst(self)
+      - F-SAPT0 electrostatics.
+      fexch:
+      - fexch(self)
+      - F-SAPT0 exchange.
+      find:
+      - find(self)
+      - F-SAPT0 induction.
+      flocalize:
+      - flocalize(self)
+      - F-SAPT0 localize.
+      freeze_core:
+      - freeze_core(self)
+      - Freeze the core orbitals.
+      ind:
+      - ind(self)
+      - SAPT0 induction.
+      kinetic:
+      - kinetic(self)
+      - Build the kinetic integrals T.
+      localize:
+      - localize(self)
+      - Localize the active occupied orbitals via IBO2.
+      matrices:
+      - matrices(self)
+      - Return the interally computed matrices (not copied).
+      molecule:
+      - molecule(self)
+      - Returns the FISAPT's molecule.
+      nuclear:
+      - nuclear(self)
+      - Build the nuclear potentials V and interaction energies.
+      overlap:
+      - overlap(self)
+      - Build the overlap integrals S.
+      partition:
+      - partition(self)
+      - Partition the nuclei and electrons.
+      print_header:
+      - print_header(self)
+      - Print header, bases, sizes, etc.
+      print_trailer:
+      - print_trailer(self)
+      - Print SAPT results.
+      raw_plot:
+      - raw_plot(self,arg0)
+      - Plot some analysis files.
+      scalars:
+      - scalars(self)
+      - Return the interally computed scalars (not copied).
+      scf:
+      - scf(self)
+      - Solve the relaxed SCF equations for A0 and B0.
+      sinf_disp:
+      - sinf_disp(self,arg0,arg1,arg2)
+      - Computes the MP2-based DispE20 and Exch-DispE20 energy without S^2.
+      unify:
+      - unify(self)
+      - Produce unified matrices for A', B', and C'.
+      unify_part2:
+      - unify_part2(self)
+      - Finish producing unified matrices for A', B', and C'.
+      vectors:
+      - vectors(self)
+      - Return the interally computed vectors (not copied).
+  fittedslatercorrelationfactor:
+    description: docstring
+    element:
+      exponent:
+      - exponent(self)
+      - None
+  fittingmetric:
+    description: docstring
+    element:
+      form_cholesky_inverse:
+      - form_cholesky_inverse(self)
+      - docstring
+      form_eig_inverse:
+      - form_eig_inverse(self,arg0)
+      - docstring
+      form_fitting_metric:
+      - form_fitting_metric(self)
+      - docstring
+      form_full_inverse:
+      - form_full_inverse(self)
+      - docstring
+      form_qr_inverse:
+      - form_QR_inverse(self,arg0)
+      - docstring
+      get_algorithm:
+      - get_algorithm(self)
+      - docstring
+      get_metric:
+      - get_metric(self)
+      - docstring
+      get_pivots:
+      - get_pivots(self)
+      - docstring
+      get_reverse_pivots:
+      - get_reverse_pivots(self)
+      - docstring
+      is_inverted:
+      - is_inverted(self)
+      - docstring
+      is_poisson:
+      - is_poisson(self)
+      - docstring
+  fragmenttype:
+    description: Fragment activation status
+    element: null
+  functional:
+    description: docstring
+    element:
+      alpha:
+      - alpha(self)
+      - docstring
+      build_base:
+      - build_base(alias)
+      - docstring
+      citation:
+      - citation(self)
+      - docstring
+      compute_functional:
+      - compute_functional(self,arg0,arg1,arg2,arg3)
+      - docstring
+      density_cutoff:
+      - density_cutoff(self)
+      - docstring
+      description:
+      - description(self)
+      - docstring
+      is_gga:
+      - is_gga(self)
+      - docstring
+      is_lrc:
+      - is_lrc(self)
+      - docstring
+      is_meta:
+      - is_meta(self)
+      - docstring
+      lsda_cutoff:
+      - lsda_cutoff(self)
+      - docstring
+      meta_cutoff:
+      - meta_cutoff(self)
+      - docstring
+      name:
+      - name(self)
+      - docstring
+      omega:
+      - omega(self)
+      - docstring
+      print_detail:
+      - print_detail(self,arg0)
+      - docstring
+      print_out:
+      - print_out(self)
+      - docstring
+      set_alpha:
+      - set_alpha(self,arg0)
+      - docstring
+      set_citation:
+      - set_citation(self,arg0)
+      - docstring
+      set_density_cutoff:
+      - set_density_cutoff(self,arg0)
+      - docstring
+      set_description:
+      - set_description(self,arg0)
+      - docstring
+      set_gga:
+      - set_gga(self,arg0)
+      - docstring
+      set_lsda_cutoff:
+      - set_lsda_cutoff(self,arg0)
+      - docstring
+      set_meta:
+      - set_meta(self,arg0)
+      - docstring
+      set_meta_cutoff:
+      - set_meta_cutoff(self,arg0)
+      - docstring
+      set_name:
+      - set_name(self,arg0)
+      - docstring
+      set_omega:
+      - set_omega(self,arg0)
+      - docstring
+      set_parameter:
+      - set_parameter(self,arg0,arg1)
+      - docstring
+  gaussianshell:
+    description: Class containing information about basis functions
+    element:
+      coef:
+      - coef(self,pi)
+      - The upper-case character symbol for the angular momentum of the given contraction
+      coord:
+      - coord(self,arg0)
+      - The angular momentum of the given contraction
+      erd_coef:
+      - erd_coef(self,pi)
+      - The character symbol for the angular momentum of the given contraction
+      exp:
+      - exp(self,prim)
+      - Basis function index where this shell starts.
+      is_cartesian:
+      - is_cartesian(self)
+      - Total number of basis functions if this shell was Cartesian
+      is_pure:
+      - is_pure(self)
+      - Returns atom number this shell is on
+      original_coef:
+      - original_coef(self,pi)
+      - Total number of basis functions
+  gaussiantype:
+    description: 0 if Cartesian, 1 if Pure
+    element: null
+  geometryunits:
+    description: The units used to define the geometry
+    element: null
+  hf:
+    description: docstring
+    element:
+      check_phases:
+      - check_phases(self)
+      - docstring
+      clear_external_cpscf_perturbations:
+      - clear_external_cpscf_perturbations(self)
+      - The DIIS object.
+      clear_external_potentials:
+      - clear_external_potentials(self)
+      - docstring
+      compute_e:
+      - compute_E(self)
+      - Frac performed current iteration?
+      compute_energy:
+      - compute_energy()
+      - Has the DIIS object been initialized?
+      compute_fvpi:
+      - compute_fvpi(self)
+      - Internal iterator for SCF cycles.
+      compute_initial_e:
+      - compute_initial_E(self)
+      - Do reset the occupation after the guess to the inital occupation.
+      compute_orbital_gradient:
+      - compute_orbital_gradient(self,arg0,arg1)
+      - Do assume a non-idempotent density matrix and no orbitals after the guess.
+      compute_spin_contamination:
+      - compute_spin_contamination(self)
+      - Returns the internal DFT V object.
+      cphf_converged:
+      - cphf_converged(self)
+      - Returns the Beta Kohn-Sham Potential Matrix.
+      cphf_hx:
+      - cphf_Hx(self,arg0)
+      - Returns the Alpha Kohn-Sham Potential Matrix.
+      cphf_solve:
+      - cphf_solve(self,x_vec,conv_tol,max_iter)
+      - docstring
+      damping_update:
+      - damping_update(self,arg0)
+      - Clear private external_cpscf_perturbations map
+      diis:
+      - diis(self,arg0)
+      - Clear private external_potentials list
+      finalize:
+      - finalize(self)
+      - docstring
+      finalize_energy:
+      - finalize_energy()
+      - Base class Wavefunction requires this function.
+      find_occupation:
+      - find_occupation(self)
+      - Update number of frozen virtuals
+      form_c:
+      - form_C(self[,shift])
+      - docstring
+      form_d:
+      - form_D(self)
+      - docstring
+      form_f:
+      - form_F(self)
+      - docstring
+      form_fdsmsdf:
+      - form_FDSmSDF(self,arg0,arg1)
+      - CPHF Hessian-vector prodcuts (4 * J - K - K.T).
+      form_g:
+      - form_G(self)
+      - Adds occupied guess alpha orbitals.
+      form_h:
+      - form_H(self)
+      - Solves the CPHF equations for a given set of x vectors.
+      form_initial_c:
+      - form_initial_C(self)
+      - Cleans up the the Wavefunction's temporary data.
+      form_initial_f:
+      - form_initial_F(self)
+      - Performs stability analysis and calls back SCF with new guess if needed, Returns
+        the SCF energy.
+      form_shalf:
+      - form_Shalf(self)
+      - docstring
+      form_v:
+      - form_V(self)
+      - docstring
+      frac_renormalize:
+      - frac_renormalize(self)
+      - docstring
+      functional:
+      - functional(self)
+      - Forms the Orbital Matrices from the current Fock Matrices.
+      get_energies:
+      - get_energies(self,arg0)
+      - Forms the Density Matrices from the current Orbitals Matrices
+      guess:
+      - guess(self)
+      - Forms the F matrix.
+      guess_ca:
+      - guess_Ca(self,arg0)
+      - Forms the residual of SCF theory
+      guess_cb:
+      - guess_Cb(self,arg0)
+      - Forms the G matrix.
+      initialize:
+      - initialize()
+      - Forms the core Hamiltonian
+      initialize_gtfock_jk:
+      - initialize_gtfock_jk(self)
+      - Forms the S^1/2 matrix
+      initialize_jk:
+      - initialize_jk(memory[,jk])
+      - Form the Kohn-Sham Potential Matrices from the current Density Matrices
+      iterations:
+      - iterations([e_conv,d_conv])
+      - Forms the initial Orbital Matrices from the current Fock Matrices.
+      jk:
+      - jk(self)
+      - Forms the initial F matrix.
+      occupation_a:
+      - occupation_a(self)
+      - docstring
+      occupation_b:
+      - occupation_b(self)
+      - Returns the internal DFT Superfunctional.
+      onel_hx:
+      - onel_Hx(self,arg0)
+      - docstring
+      print_energies:
+      - print_energies()
+      - Forms the guess (guarantees C, D, and E)
+      print_header:
+      - print_header(self)
+      - Sets the guess Alpha Orbital Matrix
+      print_orbitals:
+      - print_orbitals(self)
+      - Sets the guess Beta Orbital Matrix
+      print_preiterations:
+      - print_preiterations([small])
+      - Specialized initialization, compute integrals and does everything to prepare
+        for iterations
+      print_stability_analysis:
+      - print_stability_analysis(self,arg0)
+      - Sets up a GTFock JK object
+      push_back_external_potential:
+      - push_back_external_potential(self,V)
+      - Returns the internal JK object.
+      reset_occupation:
+      - reset_occupation(self)
+      - Returns the Alpha occupation numbers.
+      rotate_orbitals:
+      - rotate_orbitals(self,arg0,arg1)
+      - Returns the Beta occupation numbers.
+      save_density_and_energy:
+      - save_density_and_energy(self)
+      - One-electron Hessian-vector products.
+      scf_type:
+      - scf_type(self)
+      - docstring
+      semicanonicalize:
+      - semicanonicalize(self)
+      - docstring
+      set_energies:
+      - set_energies(self,arg0,arg1)
+      - docstring
+      set_external_cpscf_perturbation:
+      - set_external_cpscf_perturbation(self,name,...)
+      - Add an external potential to the private external_potentials list
+      set_jk:
+      - set_jk(self,arg0)
+      - docstring
+      set_sad_basissets:
+      - set_sad_basissets(self,arg0)
+      - docstring
+      set_sad_fitting_basissets:
+      - set_sad_fitting_basissets(self,arg0)
+      - docstring
+      soscf_update:
+      - soscf_update(self,arg0,arg1,arg2,arg3)
+      - Return the value of scf_type used in the SCF computation.
+      stability_analysis:
+      - stability_analysis(self)
+      - Semicanonicalizes the orbitals for ROHF.
+      twoel_hx:
+      - twoel_Hx(self,arg0,arg1,arg2)
+      - docstring
+      v_potential:
+      - V_potential(self)
+      - Are we to do excited-state MOM?
+      va:
+      - Va(self)
+      - MOM performed current iteration?
+      validate_diis:
+      - validate_diis()
+      - Add an external potential/perturbation to the private external_cpscf_perturbations
+        map for CPSCF
+      vb:
+      - Vb(self)
+      - Current macroiteration (1-indexed) for stability analysis
+  integralfactory:
+    description: Computes integrals
+    element:
+      ao_angular_momentum:
+      - ao_angular_momentum(self[,deriv])
+      - Returns a OneBodyInt that computes the AO angular momentum integral
+      ao_dipole:
+      - ao_dipole(self[,deriv])
+      - Returns a OneBodyInt that computes the AO dipole integrals
+      ao_kinetic:
+      - ao_kinetic(self[,deriv])
+      - Returns a OneBodyInt that computes the AO kinetic integrals
+      ao_multipole_potential:
+      - ao_multipole_potential(self,order[,deriv])
+      - Returns a OneBodyInt that computes arbitrary-order AO multipole potential
+        integrals
+      ao_multipoles:
+      - ao_multipoles(self,order[,deriv])
+      - Returns a OneBodyInt that computes arbitrary-order AO multipole integrals
+      ao_nabla:
+      - ao_nabla(self[,deriv])
+      - Returns a OneBodyInt that computes the AO nabla integral
+      ao_overlap:
+      - ao_overlap(self[,deriv])
+      - Returns a OneBodyInt that computes the AO overlap integrals
+      ao_potential:
+      - ao_potential(self[,deriv])
+      - Returns a OneBodyInt that computes the AO nuclear attraction integral
+      ao_quadrupole:
+      - ao_quadrupole(self)
+      - Returns a OneBodyInt that computes AO the quadrupole integral
+      ao_traceless_quadrupole:
+      - ao_traceless_quadrupole(self)
+      - Returns a OneBodyInt that computes the traceless AO quadrupole integral
+      electric_field:
+      - electric_field(self,arg0)
+      - Returns a OneBodyInt that computes the electric field
+      electrostatic:
+      - electrostatic(self)
+      - Returns a OneBodyInt that computes the point electrostatic potential
+      erf_complement_eri:
+      - erf_complement_eri(self,omega[,deriv,...])
+      - Returns an erf complement ERI integral object (omega integral)
+      erf_eri:
+      - erf_eri(self,omega[,deriv,...])
+      - Returns and erf ERI integral object (omega integral)
+      eri:
+      - eri(self[,deriv,use_shell_pairs,...])
+      - Returns an ERI integral object
+      f12:
+      - f12(self,cf[,deriv,use_shell_pairs])
+      - Returns an F12 integral object
+      f12_double_commutator:
+      - f12_double_commutator(self,cf[,deriv,...])
+      - Returns an F12 double commutator integral object
+      f12_squared:
+      - f12_squared(self,cf[,deriv,use_shell_pairs])
+      - Returns an F12 squared integral object
+      f12g12:
+      - f12g12(self,cf[,deriv,use_shell_pairs])
+      - Returns an F12G12 integral object
+      overlap_3c:
+      - overlap_3c(self)
+      - Returns a OneBodyInt that computes the 3 center overlap integral
+      shells_iterator:
+      - shells_iterator(self)
+      - Returns an ERI iterator object, only coded for standard ERIs
+      so_angular_momentum:
+      - so_angular_momentum(self[,deriv])
+      - Returns a OneBodyInt that computes the SO angular momentum integral
+      so_dipole:
+      - so_dipole(self[,deriv])
+      - Returns a OneBodyInt that computes the SO dipole integrals
+      so_kinetic:
+      - so_kinetic(self[,deriv])
+      - Returns a OneBodyInt that computes the SO kinetic integrals
+      so_multipoles:
+      - so_multipoles(self,order[,deriv])
+      - Returns a OneBodyInt that computes arbitrary-order SO multipole integrals
+      so_nabla:
+      - so_nabla(self[,deriv])
+      - Returns a OneBodyInt that computes the SO nabla integral
+      so_overlap:
+      - so_overlap(self[,deriv])
+      - Returns a OneBodyInt that computes the SO overlap integrals
+      so_potential:
+      - so_potential(self[,deriv])
+      - Returns a OneBodyInt that computes the SO nuclear attraction integral
+      so_quadrupole:
+      - so_quadrupole(self)
+      - Returns a OneBodyInt that computes SO the quadrupole integral
+      so_traceless_quadrupole:
+      - so_traceless_quadrupole(self)
+      - Returns a OneBodyInt that computes the traceless SO quadrupole integral
+  integraltransform:
+    description: IntegralTransform transforms one- and two-electron integrals within
+      general spaces
+    element:
+      alpha_corr_to_pitzer:
+      - alpha_corr_to_pitzer(self)
+      - Initialize an IntegralTransform
+      backtransform_density:
+      - backtransform_density(self,arg0)
+      - docstring
+      backtransform_tpdm_restricted:
+      - backtransform_tpdm_restricted(self)
+      - Transform two-electron integrals
+      backtransform_tpdm_unrestricted:
+      - backtransform_tpdm_unrestricted(self)
+      - First half-transform two-electron integrals
+      beta_corr_to_pitzer:
+      - beta_corr_to_pitzer(self)
+      - Second half-transform two-electron integrals
+      compute_fock_like_matrices:
+      - compute_fock_like_matrices(self,Hcore,Cmats)
+      - docstring
+      dpd_id:
+      - DPD_ID(*args,**kwargs)
+      - Overloaded function.
+      get_dpd_id:
+      - get_dpd_id(self)
+      - None
+      get_frozen_core_energy:
+      - get_frozen_core_energy(self)
+      - None
+      get_keep_dpd_so_ints:
+      - get_keep_dpd_so_ints(self)
+      - None
+      get_keep_ht_ints:
+      - get_keep_ht_ints(self)
+      - None
+      get_keep_iwl_so_ints:
+      - get_keep_iwl_so_ints(self)
+      - None
+      get_memory:
+      - get_memory(self)
+      - None
+      get_print:
+      - get_print(self)
+      - None
+      get_psio:
+      - get_psio(self)
+      - None
+      get_tei_already_presorted:
+      - get_tei_already_presorted(self)
+      - None
+      initialize:
+      - initialize(self)
+      - None
+      nirrep:
+      - nirrep(self)
+      - None
+      presort_so_tei:
+      - presort_so_tei(self)
+      - None
+      print_dpd_lookup:
+      - print_dpd_lookup(self)
+      - None
+      reset_so_int:
+      - reset_so_int(self)
+      - None
+      set_aa_int_name:
+      - set_aa_int_name(self,arg0)
+      - None
+      set_ab_int_name:
+      - set_ab_int_name(self,arg0)
+      - None
+      set_bb_int_name:
+      - set_bb_int_name(self,arg0)
+      - None
+      set_dpd_id:
+      - set_dpd_id(self,arg0)
+      - None
+      set_dpd_int_file:
+      - set_dpd_int_file(self,arg0)
+      - None
+      set_keep_dpd_so_ints:
+      - set_keep_dpd_so_ints(self,arg0)
+      - None
+      set_keep_ht_ints:
+      - set_keep_ht_ints(self,arg0)
+      - None
+      set_keep_iwl_so_ints:
+      - set_keep_iwl_so_ints(self,arg0)
+      - None
+      set_memory:
+      - set_memory(self,arg0)
+      - None
+      set_orbitals:
+      - set_orbitals(self,arg0)
+      - None
+      set_print:
+      - set_print(self,arg0)
+      - None
+      set_psio:
+      - set_psio(self,arg0)
+      - None
+      set_so_tei_file:
+      - set_so_tei_file(self,arg0)
+      - None
+      set_tei_already_presorted:
+      - set_tei_already_presorted(self,arg0)
+      - None
+      set_tpdm_already_presorted:
+      - set_tpdm_already_presorted(self,arg0)
+      - None
+      set_write_dpd_so_tpdm:
+      - set_write_dpd_so_tpdm(self,arg0)
+      - None
+      transform_tei:
+      - transform_tei(self,s1,s2,s3,s4,half_trans)
+      - None
+      transform_tei_first_half:
+      - transform_tei_first_half(self,s1,s2)
+      - None
+      transform_tei_second_half:
+      - transform_tei_second_half(self,s1,s2,s3,s4)
+      - None
+      update_orbitals:
+      - update_orbitals(self)
+      - None
+  intvector:
+    description: Class handling vectors with integer values
+    element:
+      add:
+      - add(*args,**kwargs)
+      - The name of the IntVector.
+      clone:
+      - clone(self)
+      - Overloaded function.
+      copy:
+      - copy(self,arg0)
+      - Clone the vector
+      dim:
+      - dim(self[,h])
+      - Copy another vector into this.
+      dimpi:
+      - dimpi(self)
+      - Returns the number of dimensions per irrep h
+      get:
+      - get(*args,**kwargs)
+      - Returns the Dimension object
+      get_block:
+      - get_block(self,slice)
+      - Overloaded function.
+      init:
+      - init(self,arg0)
+      - Get a vector block
+      iota:
+      - iota(arg0)
+      - Reallocate the data of the Vector.
+      nirrep:
+      - nirrep(self)
+      - Returns the number of irreps
+      print_out:
+      - print_out(self)
+      - Prints the vector to the output file
+      set:
+      - set(*args,**kwargs)
+      - Overloaded function.
+      set_block:
+      - set_block(self,slice,block)
+      - Set a vector block
+      zero:
+      - zero(self)
+      - Zeros the vector
+  io:
+    description: docstring
+    element:
+      change_file_namespace:
+      - change_file_namespace(fileno,ns1,ns2)
+      - Change file number from ns1 to ns2
+      close:
+      - close(self,unit,keep)
+      - Close unit.
+      exists:
+      - exists(self,unit)
+      - Check if the unit exists.
+      get_default_namespace:
+      - get_default_namespace()
+      - Get the default namespace (for PREFIX.NAMESPACE.UNIT file numbering)
+      getpid:
+      - getpid(self)
+      - Lookup process id
+      open:
+      - open(self,unit,status)
+      - Open unit.
+      open_check:
+      - open_check(self,unit)
+      - Return 1 if unit is open
+      rehash:
+      - rehash(self,unit)
+      - Sync up the object to the file on disk by closing and opening the file, if
+        necessary
+      set_default_namespace:
+      - set_default_namespace(ns)
+      - Set the current namespace (for PREFIX.NAMESPACE.UNIT file numbering)
+      set_pid:
+      - set_pid(self,pid)
+      - Set process id
+      shared_object:
+      - shared_object()
+      - Return the global shared object
+      state:
+      - state(self)
+      - Return 1 if PSIO library is activated
+      tocclean:
+      - tocclean(self,unit,key)
+      - Delete all TOC entries after the given key.
+      tocentry_exists:
+      - tocentry_exists(self,arg0,arg1)
+      - Checks the TOC to see if a particular keyword exists there or not
+      tocprint:
+      - tocprint(self,arg0)
+      - Print the table of contents for the given unit
+      tocscan:
+      - tocscan(self,arg0,arg1)
+      - Seek string in binary file.
+      tocwrite:
+      - tocwrite(self,arg0)
+      - Write the table of contents for passed file number
+  iomanager:
+    description: PSIOManager is a class designed to be used as a static object to
+      track all PSIO operations in a given PSI4 computation
+    element:
+      crashclean:
+      - crashclean(self)
+      - Clean from disk-mirrored image after crash.
+      get_default_path:
+      - get_default_path(self)
+      - Return the default path
+      get_file_path:
+      - get_file_path(self,fileno)
+      - Get the path for a specific file number
+      mark_file_for_retention:
+      - mark_file_for_retention(self,full_path,retain)
+      - Mark a file to be retained after a psiclean operation, ie for use in a later
+        computation
+      print_out:
+      - print_out(self)
+      - Print the current status of PSI4 files
+      psiclean:
+      - psiclean(self)
+      - Execute the psiclean protocol, deleting all recorded files, except those currently
+        marked for retention
+      set_default_path:
+      - set_default_path(self,path)
+      - Set the default path for files to be stored
+      set_specific_path:
+      - set_specific_path(self,fileno,path)
+      - Set the path for specific file numbers
+      set_specific_retention:
+      - set_specific_retention(self,fileno,retain)
+      - Set the specific file number to be retained
+      shared_object:
+      - shared_object()
+      - The one and (should be) only instance of PSIOManager for a PSI4 instance
+      write_scratch_file:
+      - write_scratch_file(self,full_path,text)
+      - Write a string to a temporary file.
+  irreduciblerepresentation:
+    description: An irreducible representation of the point group
+    element:
+      character:
+      - character(self,arg0)
+      - Return the character of the i'th symmetry operation for the irrep.
+      symbol:
+      - symbol(self)
+      - Return the symbol for the irrep
+  jk:
+    description: docstring
+    element:
+      basisset:
+      - basisset(self)
+      - docstring
+      build:
+      - build(orbital_basis[,aux,jk_type,do_wK,...])
+      - Dampening term for range separated DFT
+      build_jk:
+      - build_JK(*args,**kwargs)
+      - Weight for HF exchange term in range-separated DFT
+      c_add:
+      - C_add(self,arg0)
+      - Constructs a Psi4 JK object from an input basis.
+      c_clear:
+      - C_clear(self)
+      - Overloaded function.
+      c_left_add:
+      - C_left_add(self,arg0)
+      - Overloaded function.
+      c_right_add:
+      - C_right_add(self,arg0)
+      - Dampening term for range separated DFT
+      compute:
+      - compute(self)
+      - Weight for dampened exchange term in range-separated DFT
+      computed_shells_per_iter:
+      - computed_shells_per_iter(*args,**kwargs)
+      - Are Exchange terms in one Matrix
+      d:
+      - D(self)
+      - Weight for HF exchange term in range-separated DFT
+      finalize:
+      - finalize(self)
+      - None
+      get_omega:
+      - get_omega(self)
+      - None
+      get_omega_alpha:
+      - get_omega_alpha(self)
+      - None
+      get_omega_beta:
+      - get_omega_beta(self)
+      - None
+      get_wcombine:
+      - get_wcombine(self)
+      - None
+      initialize:
+      - initialize(self)
+      - None
+      j:
+      - J(self)
+      - Weight for dampened exchange term in range-separated DFT
+      k:
+      - K(self)
+      - wcombine
+      memory_estimate:
+      - memory_estimate(self)
+      - None
+      name:
+      - name(self)
+      - None
+      print_header:
+      - print_header(self)
+      - None
+      set_cutoff:
+      - set_cutoff(self,arg0)
+      - None
+      set_do_j:
+      - set_do_J(self,arg0)
+      - None
+      set_do_k:
+      - set_do_K(self,arg0)
+      - None
+      set_do_wk:
+      - set_do_wK(self,arg0)
+      - None
+      set_memory:
+      - set_memory(self,arg0)
+      - None
+      set_omega:
+      - set_omega(self,omega)
+      - None
+      set_omega_alpha:
+      - set_omega_alpha(self,alpha)
+      - None
+      set_omega_beta:
+      - set_omega_beta(self,beta)
+      - None
+      set_omp_nthread:
+      - set_omp_nthread(self,arg0)
+      - None
+      set_print:
+      - set_print(self,arg0)
+      - None
+      set_wcombine:
+      - set_wcombine(self,wcombine)
+      - None
+      wk:
+      - wK(self)
+      - None
+  kineticint:
+    description: Computes kinetic integrals
+    element: null
+  laplacedenominator:
+    description: Computer class for a Laplace factorization of the four-index energy
+      denominator in MP2 and coupled-cluster
+    element:
+      denominator_occ:
+      - denominator_occ(self)
+      - Returns the occupied orbital Laplace weights of the factorized doubles denominator
+        (nweights * nocc)
+      denominator_vir:
+      - denominator_vir(self)
+      - Returns the virtual orbital Laplace weights of the factorized doubles denominator
+        (nweights * nvirt)
+  libxcfunctional:
+    description: docstring
+    element:
+      density_cutoff:
+      - density_cutoff(self)
+      - docstring
+      get_mix_data:
+      - get_mix_data(self)
+      - docstring
+      query_libxc:
+      - query_libxc(self,arg0)
+      - query libxc regarding functional parameters.
+      set_density_cutoff:
+      - set_density_cutoff(self,arg0)
+      - docstring
+      set_omega:
+      - set_omega(self,arg0)
+      - docstring
+      set_tweak:
+      - set_tweak(*args,**kwargs)
+      - Overloaded function.
+      xclib_description:
+      - xclib_description()
+      - query libxc for version and citation
+  localizer:
+    description: Class containing orbital localization procedures
+    element:
+      build:
+      - build(arg0,arg1,arg2)
+      - Localized orbital coefficients
+      localize:
+      - localize(self)
+      - Orbital rotation matrix
+  ls_thc_computer:
+    description: Computer class for grid-based tensor hypercontraction (THC) of two-electron
+      integrals (Parrish 2012)
+    element:
+      compute_thc_factorization:
+      - compute_thc_factorization(self)
+      - Compute the THC (x1, x2, Z, x3, x4) factors through grid based LS-THC
+      get_x1:
+      - get_x1(self)
+      - Returns x1 factor from LS-THC factorization
+      get_x2:
+      - get_x2(self)
+      - Returns x2 factor from LS-THC factorization
+      get_x3:
+      - get_x3(self)
+      - Returns x3 factor from LS-THC factorization
+      get_x4:
+      - get_x4(self)
+      - Returns x4 factor from LS-THC factorization
+      get_z:
+      - get_Z(self)
+      - Returns Z factor from LS-THC factorization
+  matrix:
+    description: Class for creating and manipulating matrices
+    element:
+      absmax:
+      - absmax(self)
+      - The name of the Matrix.
+      accumulate_product:
+      - accumulate_product(self,arg0,arg1)
+      - View with single irrep.
+      add:
+      - add(*args,**kwargs)
+      - View with irreps.
+      add_and_orthogonalize_row:
+      - add_and_orthogonalize_row(self,v)
+      - Shape of the Psi4 data object.
+      apply_denominator:
+      - apply_denominator(self,Matrix)
+      - Returns the absolute maximum value
+      array_interface:
+      - array_interface(self)
+      - Multiplies two arguments and adds the result to this matrix
+      axpy:
+      - axpy(self,a,X)
+      - Overloaded function.
+      back_transform:
+      - back_transform(*args,**kwargs)
+      - Expands the row dimension by one,               and then orthogonalizes vector
+        v against the current rows               before setting the new row to the
+        orthogonalized copy of v
+      chain_dot:
+      - chain_dot(**kwargs)
+      - Apply matrix of denominators to this matrix
+      cholesky_factorize:
+      - cholesky_factorize(self)
+      - Add to this matrix another matrix scaled by a
+      clone:
+      - clone(self)
+      - Overloaded function.
+      coldim:
+      - coldim(self)
+      - Chains dot products together from a series of Psi4 Matrix classes.
+      cols:
+      - cols(self[,h])
+      - Computes the Cholesky factorization of a real symmetric positive definite
+        matrix
+      copy:
+      - copy(self,arg0)
+      - Creates exact copy of the matrix and returns it
+      copy_lower_to_upper:
+      - copy_lower_to_upper(self)
+      - Returns the columns per irrep array
+      copy_upper_to_lower:
+      - copy_upper_to_lower(self)
+      - Returns the columns in irrep h
+      diagonalize:
+      - diagonalize(self,eigvectors,eigvalues,order)
+      - Copy another Matrix into this.
+      doublet:
+      - doublet(A,B,transA,transB)
+      - Copy the lower triangle to the upper triangle
+      from_array:
+      - from_array([name,dim1,dim2])
+      - Copy the upper triangle to the lower triangle
+      from_list:
+      - from_list(x)
+      - Diagonalizes this matrix, space for the eigvectors and eigvalues must be created
+        by caller.
+      from_serial:
+      - from_serial()
+      - Multiply two matrices together.
+      gemm:
+      - gemm(self,transa,transb,alpha,a,b,beta)
+      - 'Converts a <a class="reference external" href="https://numpy.org/doc/stable/reference/arrays.ndarray.html">NumPy
+        array</a> or list of NumPy arrays into a <span style="font-family: Optima,
+        sans-serif; text-transform: none;">P<span style="font-size: 82%;">SI</span>4</span>
+        <a class="reference internal" href="#psi4.core.Matrix" title="psi4.core.Matrix"><code
+        class="xref py py-class docutils literal notranslate"><span class="pre">Matrix</span></code></a>
+        or <a class="reference internal" href="psi4.core.Vector.html#psi4.core.Vector"
+        title="psi4.core.Vector"><code class="xref py py-class docutils literal notranslate"><span
+        class="pre">Vector</span></code></a> (irrepped if list).'
+      general_invert:
+      - general_invert(self)
+      - Converts serialized data to the correct Psi4 data type
+      get:
+      - get(*args,**kwargs)
+      - Generalized matrix multiplication               argument transa Transpose
+        the left matrix?               argument transb Transpose the right matrix?               argument
+        alpha Prefactor for the matrix multiplication               argument A Left
+        matrix               argument B Right matrix               argument beta Prefactor
+        for the resulting matrix
+      get_block:
+      - get_block(self,rows,cols)
+      - Computes the inverse of any nonsingular matrix using LU factorization
+      hermitivitize:
+      - hermitivitize(self)
+      - Overloaded function.
+      hermitize:
+      - hermitize(self)
+      - Get a matrix block
+      identity:
+      - identity(self)
+      - Average off-diagonal element in-place
+      invert:
+      - invert(self)
+      - Makes a real matrix symmetric by averaging the matrix and its transpose.
+      load:
+      - load(*args,**kwargs)
+      - Sets the matrix to the identity
+      load_mpqc:
+      - load_mpqc(self,filename)
+      - Computes the inverse of a real symmetric positive definite matrix
+      nirrep:
+      - nirrep(self)
+      - Overloaded function.
+      np_read:
+      - np_read([prefix])
+      - Loads a matrix from an ASCII file in MPQC format
+      np_write:
+      - np_write([filename,prefix])
+      - Returns the number of irreps
+      partial_cholesky_factorize:
+      - partial_cholesky_factorize(self[,delta,...])
+      - Reads the data from a NumPy compressed or uncompressed file using <a class="reference
+        external" href="https://numpy.org/doc/stable/reference/generated/numpy.load.html#numpy.load"
+        title="(in NumPy v2.1)"><code class="xref py py-func docutils literal notranslate"><span
+        class="pre">numpy.load()</span></code></a>.
+      power:
+      - power(self,alpha[,cutoff])
+      - Writes the irrepped matrix to a NumPy uncompressed file using <a class="reference
+        external" href="https://numpy.org/doc/stable/reference/generated/numpy.savez.html#numpy.savez"
+        title="(in NumPy v2.1)"><code class="xref py py-func docutils literal notranslate"><span
+        class="pre">numpy.savez()</span></code></a>.
+      print_atom_vector:
+      - print_atom_vector(self[,RMRoutfile])
+      - Computes the fully pivoted partial Cholesky factorization of a real symmetric
+        positive semidefinite matrix,               to numerical precision delta
+      print_out:
+      - print_out(self)
+      - Takes the matrix to the alpha power with precision cutoff
+      pseudoinverse:
+      - pseudoinverse(self,condition,nremoved)
+      - Print the matrix with atom labels, assuming it is an natom X 3 tensor
+      remove_symmetry:
+      - remove_symmetry(self,a,transformer)
+      - Prints the matrix to the output file
+      rms:
+      - rms(self)
+      - Computes the matrix which is the conditioned pseudoinverse of this matrix
+      rotate_columns:
+      - rotate_columns(self,h,i,j,theta)
+      - Remove symmetry from a matrix A with PetiteList::sotoao()
+      rowdim:
+      - rowdim(self)
+      - Returns the rms of this matrix
+      rows:
+      - rows(self[,h])
+      - Rotates columns i and j in irrep h by angle theta
+      save:
+      - save(*args,**kwargs)
+      - Returns the rows per irrep array
+      scale:
+      - scale(self,a)
+      - Returns the rows in irrep h
+      scale_column:
+      - scale_column(self,h,n,a)
+      - Overloaded function.
+      scale_row:
+      - scale_row(self,h,m,a)
+      - Scales the matrix by the floating point value a
+      schmidt:
+      - schmidt(self)
+      - Scales column n of irrep h by a
+      set:
+      - set(*args,**kwargs)
+      - Scales row m of irrep h by a
+      set_block:
+      - set_block(self,rows,cols,block)
+      - Calls the libqt schmidt function
+      subtract:
+      - subtract(self,arg0)
+      - Overloaded function.
+      sum_of_squares:
+      - sum_of_squares(self)
+      - Set a matrix block
+      symmetrize_gradient:
+      - symmetrize_gradient(self,mol)
+      - Substract a matrix from this matrix
+      symmetry:
+      - symmetry(self)
+      - Returns the sum of the squares of this matrix
+      to_array:
+      - to_array([copy,dense])
+      - Symmetrizes a gradient-like matrix (N,3) using information from a given molecule
+      to_serial:
+      - to_serial()
+      - Returns the overall symmetry of the matrix
+      trace:
+      - trace(self)
+      - 'Converts a <span style="font-family: Optima, sans-serif; text-transform:
+        none;">P<span style="font-size: 82%;">SI</span>4</span> Matrix or Vector to
+        a NumPy array.'
+      transform:
+      - transform(*args,**kwargs)
+      - Converts an object with a <code class="docutils literal notranslate"><span
+        class="pre">.nph</span></code> accessor to a serialized dictionary
+      transpose:
+      - transpose(self)
+      - Returns the trace of the matrix
+      transpose_this:
+      - transpose_this(self)
+      - Overloaded function.
+      triplet:
+      - triplet(A,B,C,transA,transB,transC)
+      - Creates a new matrix that is the transpose of this matrix
+      vector_dot:
+      - vector_dot(self,rhs)
+      - Transpose the matrix in-place
+      zero:
+      - zero(self)
+      - Multiply three matrices together.
+      zero_diagonal:
+      - zero_diagonal(self)
+      - Returns the vector dot product of this with rhs
+      zero_lower:
+      - zero_lower(self)
+      - Zero all elements of the matrix
+      zero_upper:
+      - zero_upper(self)
+      - Zero the diagonal of the matrix
+  matrixfactory:
+    description: Creates Matrix objects
+    element:
+      create_matrix:
+      - create_matrix(*args,**kwargs)
+      - Overloaded function.
+  memdfjk:
+    description: docstring
+    element:
+      dfh:
+      - dfh(self)
+      - Return the DFHelper object.
+  mintshelper:
+    description: Computes integrals
+    element:
+      ao_3center_deriv1:
+      - ao_3center_deriv1(self,atom,aux_name)
+      - 'Gradient of AO basis 3-center, density-fitted integrals: returns 3 matrices'
+      ao_3coverlap:
+      - ao_3coverlap(*args,**kwargs)
+      - Overloaded function.
+      ao_angular_momentum:
+      - ao_angular_momentum(self)
+      - Vector AO angular momentum integrals
+      ao_dipole:
+      - ao_dipole(self)
+      - Vector AO dipole integrals
+      ao_dkh:
+      - ao_dkh(self,arg0)
+      - AO dkh integrals
+      ao_efp_multipole_potential:
+      - ao_efp_multipole_potential(self,origin[,deriv])
+      - Vector AO EFP multipole integrals
+      ao_elec_dip_deriv1:
+      - ao_elec_dip_deriv1(self,atom)
+      - 'Gradient of AO basis electric dipole integrals: returns (3 * natoms) matrices'
+      ao_erf_eri:
+      - ao_erf_eri(self,omega[,factory])
+      - AO ERF integrals
+      ao_eri:
+      - ao_eri(*args,**kwargs)
+      - Overloaded function.
+      ao_eri_shell:
+      - ao_eri_shell(self,M,N,P,Q)
+      - AO ERI Shell
+      ao_f12:
+      - ao_f12(*args,**kwargs)
+      - Overloaded function.
+      ao_f12_double_commutator:
+      - ao_f12_double_commutator(*args,**kwargs)
+      - Overloaded function.
+      ao_f12_squared:
+      - ao_f12_squared(*args,**kwargs)
+      - Overloaded function.
+      ao_f12g12:
+      - ao_f12g12(*args,**kwargs)
+      - Overloaded function.
+      ao_kinetic:
+      - ao_kinetic(*args,**kwargs)
+      - Overloaded function.
+      ao_metric_deriv1:
+      - ao_metric_deriv1(self,atom,aux_name)
+      - 'Gradient of AO basis metric integrals: returns 3 matrices'
+      ao_multipole_potential:
+      - ao_multipole_potential(self,order,origin)
+      - Vector AO multipole potential integrals
+      ao_multipoles:
+      - ao_multipoles(self,order,origin)
+      - Vector AO multipole integrals
+      ao_nabla:
+      - ao_nabla(self)
+      - Vector AO nabla integrals
+      ao_oei_deriv1:
+      - ao_oei_deriv1(self,oei_type,atom)
+      - 'Gradient of AO basis OEI integrals: returns (3 * natoms) matrices'
+      ao_oei_deriv2:
+      - ao_oei_deriv2(self,oei_type,atom1,atom2)
+      - 'Hessian  of AO basis OEI integrals: returns (3 * natoms)^2 matrices'
+      ao_overlap:
+      - ao_overlap(*args,**kwargs)
+      - Overloaded function.
+      ao_overlap_half_deriv1:
+      - ao_overlap_half_deriv1(self,side,atom)
+      - 'Half-derivative of AO basis overlap integrals: returns (3 * natoms) matrices'
+      ao_potential:
+      - ao_potential(*args,**kwargs)
+      - Overloaded function.
+      ao_potential_erf:
+      - ao_potential_erf(self[,origin,omega,deriv])
+      - AO Erf-attenuated Coulomb potential on a given point
+      ao_potential_erf_complement:
+      - ao_potential_erf_complement(self[,origin,...])
+      - AO Erfc-attenuated Coulomb potential on a given point
+      ao_pvp:
+      - ao_pvp(self)
+      - AO pvp integrals
+      ao_quadrupole:
+      - ao_quadrupole(self)
+      - Vector AO quadrupole integrals
+      ao_tei_deriv1:
+      - ao_tei_deriv1(self,atom[,omega,factory])
+      - 'Gradient of AO basis TEI integrals: returns (3 * natoms) matrices'
+      ao_tei_deriv2:
+      - ao_tei_deriv2(self,atom1,atom2)
+      - 'Hessian  of AO basis TEI integrals: returns (3 * natoms)^2 matrices'
+      ao_traceless_quadrupole:
+      - ao_traceless_quadrupole(self)
+      - Vector AO traceless quadrupole integrals
+      basisset:
+      - basisset(self)
+      - Returns the basis set being used
+      cdsalcs:
+      - cdsalcs(self,arg0,arg1,arg2)
+      - Returns a CdSalcList object
+      core_hamiltonian_grad:
+      - core_hamiltonian_grad(self,arg0)
+      - First nuclear derivative T + V + Perturb integrals
+      dipole_grad:
+      - dipole_grad(self,arg0)
+      - First nuclear derivative dipole integrals
+      electric_field:
+      - electric_field(self,origin[,deriv])
+      - Vector electric field integrals
+      electric_field_value:
+      - electric_field_value(self,arg0,arg1)
+      - Electric field expectation value at given sites
+      electrostatic_potential_value:
+      - electrostatic_potential_value(self,charges,...)
+      - Electrostatic potential values at given sites with associated charge, specified
+        as an (n_sites, 4) matrix.
+      f12_cgtg:
+      - f12_cgtg(self[,exponent])
+      - F12 Fitted Slater Correlation Factor
+      factory:
+      - factory(self)
+      - Returns the Matrix factory being used
+      induction_operator:
+      - induction_operator(self,arg0,arg1)
+      - Induction operator, formed by contracting electric field integrals with dipole
+        moments at given coordinates (needed for EFP and PE)
+      integral:
+      - integral(self)
+      - Integral factory being used
+      integrals:
+      - integrals(self)
+      - Molecular integrals
+      integrals_erf:
+      - integrals_erf(self[,w])
+      - ERF integrals
+      integrals_erfc:
+      - integrals_erfc(self[,w])
+      - ERFC integrals
+      kinetic_grad:
+      - kinetic_grad(self,arg0)
+      - First nuclear derivative kinetic integrals
+      mo_elec_dip_deriv1:
+      - mo_elec_dip_deriv1(self,atom,C1,C2)
+      - 'Gradient of MO basis electric dipole integrals: returns (3 * natoms) matrices'
+      mo_erf_eri:
+      - mo_erf_eri(self,omega,C1,C2,C3,C4)
+      - MO ERFC Omega Integrals
+      mo_eri:
+      - mo_eri(self,C1,C2,C3,C4)
+      - MO ERI Integrals.
+      mo_f12:
+      - mo_f12(self,corr,C1,C2,C3,C4)
+      - MO F12 Integrals
+      mo_f12_double_commutator:
+      - mo_f12_double_commutator(self,corr,C1,C2,...)
+      - MO F12 double commutator integrals
+      mo_f12_squared:
+      - mo_f12_squared(self,corr,C1,C2,C3,C4)
+      - MO F12 squared integrals
+      mo_f12g12:
+      - mo_f12g12(self,corr,C1,C2,C3,C4)
+      - MO F12G12 integrals
+      mo_oei_deriv1:
+      - mo_oei_deriv1(self,oei_type,atom,C1,C2)
+      - 'Gradient of MO basis OEI integrals: returns (3 * natoms) matrices'
+      mo_oei_deriv2:
+      - mo_oei_deriv2(self,oei_type,atom1,atom2,...)
+      - 'Hessian  of MO basis OEI integrals: returns (3 * natoms)^2 matrices'
+      mo_overlap_half_deriv1:
+      - mo_overlap_half_deriv1(self,side,atom,C1,C2)
+      - 'Half-derivative of MO basis overlap integrals: returns (3 * natoms) matrices'
+      mo_spin_eri:
+      - mo_spin_eri(self,C1,C2)
+      - Symmetric MO Spin ERI Integrals
+      mo_tei_deriv1:
+      - mo_tei_deriv1(self,atom,C1,C2,C3,C4)
+      - 'Gradient of MO basis TEI integrals: returns (3 * natoms) matrices'
+      mo_tei_deriv2:
+      - mo_tei_deriv2(self,atom1,atom2,C1,C2,C3,C4)
+      - 'Hessian  of MO basis TEI integrals: returns (3 * natoms)^2 matrices'
+      mo_transform:
+      - mo_transform(self,Iso,C1,C2,C3,C4)
+      - N^5 ao to mo transfrom, in memory
+      multipole_grad:
+      - multipole_grad(self,D,order,origin)
+      - First nuclear derivative multipole integrals
+      nbf:
+      - nbf(self)
+      - Returns the number of basis functions
+      one_electron_integrals:
+      - one_electron_integrals(self)
+      - Standard one-electron integrals
+      overlap_grad:
+      - overlap_grad(self,arg0)
+      - First nuclear derivative overlap integrals
+      perturb_grad:
+      - perturb_grad(*args,**kwargs)
+      - Overloaded function.
+      petite_list:
+      - petite_list(self)
+      - Returns petite list, which transforms AO basis functions to SO's
+      petite_list1:
+      - petite_list1(self,include_pure_transform)
+      - Returns petite list which transforms AO basis functions to SO's,               setting
+        argument to true is for Cartesian basis, false is for Spherical Harmonic basis
+      play:
+      - play(self)
+      - play function
+      potential_grad:
+      - potential_grad(self,arg0)
+      - First nuclear derivative potential integrals
+      set_basisset:
+      - set_basisset(self,label,basis)
+      - Sets a basis set
+      set_print:
+      - set_print(self,arg0)
+      - Sets the print level
+      so_angular_momentum:
+      - so_angular_momentum(self)
+      - Vector SO angular momentum integrals
+      so_dipole:
+      - so_dipole(self)
+      - Vector SO dipole integrals
+      so_dkh:
+      - so_dkh(self,arg0)
+      - SO dkh integrals
+      so_kinetic:
+      - so_kinetic(self[,include_perturbations])
+      - SO basis kinetic integrals
+      so_nabla:
+      - so_nabla(self)
+      - Vector SO nabla integrals
+      so_overlap:
+      - so_overlap(self[,include_perturbations])
+      - SO basis overlap integrals
+      so_potential:
+      - so_potential(self[,include_perturbations])
+      - SO basis potential integrals
+      so_quadrupole:
+      - so_quadrupole(self)
+      - Vector SO quadrupole integrals
+      so_traceless_quadrupole:
+      - so_traceless_quadrupole(self)
+      - Vector SO traceless quadrupole integrals
+      sobasisset:
+      - sobasisset(self)
+      - Returns the SO basis set being used
+  moldenwriter:
+    description: Writes wavefunction information in molden format
+    element:
+      write:
+      - write(self,filename,Ca,Cb,Ea,Eb,OccA,...)
+      - Writes wavefunction information in molden format
+  moleculargrid:
+    description: docstring
+    element:
+      atomic_blocks:
+      - atomic_blocks(self)
+      - Returns a list of blocks.
+      blocks:
+      - blocks(self)
+      - Returns a list of blocks.
+      collocation_size:
+      - collocation_size(self)
+      - Returns the total collocation size of all blocks.
+      max_functions:
+      - max_functions(self)
+      - Returns the maximum number of functions in a block.
+      max_points:
+      - max_points(self)
+      - Returns the maximum number of points in a block.
+      npoints:
+      - npoints(self)
+      - Returns the number of grid points.
+      orientation:
+      - orientation(self)
+      - Returns the orientation of the grid.
+      print:
+      - print(self,arg0,arg1)
+      - Prints grid information.
+  molecule:
+    description: Class to store the elements, coordinates, fragmentation pattern,
+      basis sets, charge, multiplicity, etc.
+    element:
+      activate_all_fragments:
+      - activate_all_fragments(self)
+      - Sets all fragments in the molecule to be active
+      add_atom:
+      - add_atom(self,Z,x,y,z,symbol,mass,...)
+      - Adds to self Molecule an atom with atomic number <em>Z</em>, Cartesian coordinates
+        in Bohr (<em>x</em>, <em>y</em>, <em>z</em>), atomic <em>symbol</em>, <em>mass</em>,
+        and <em>charge</em>, extended atomic <em>label</em>, and mass number <em>A</em>
+      atom_at_position:
+      - atom_at_position(*args,**kwargs)
+      - Overloaded function.
+      b787:
+      - B787(ref_mol[,do_plot,verbose,atoms_map,...])
+      - Finds shift, rotation, and atom reordering of <cite>concern_mol</cite> that
+        best aligns with <cite>ref_mol</cite>.
+      basis_on_atom:
+      - basis_on_atom(self,arg0)
+      - Gets the label of the orbital basis set on a given atom arg0
+      bfs:
+      - BFS([seed_atoms,bond_threshold,...])
+      - Detect fragments among real atoms through a breadth-first search (BFS) algorithm.
+      center_of_mass:
+      - center_of_mass(self)
+      - Computes center of mass of molecule (does not translate molecule)
+      charge:
+      - charge(self,atom)
+      - Gets charge of <em>atom</em> (0-indexed without dummies)
+      clone:
+      - clone(self)
+      - Returns a new Molecule identical to arg1
+      com_fixed:
+      - com_fixed(self)
+      - Gets whether or not center of mass is fixed
+      comment:
+      - comment(self)
+      - Gets molecule comment
+      connectivity:
+      - connectivity(self)
+      - Gets molecule connectivity
+      create_psi4_string_from_molecule:
+      - create_psi4_string_from_molecule(self)
+      - Gets a string re-expressing in input format the current state of the molecule.Contains
+        Cartesian geometry info, fragmentation, charges and multiplicities, and any
+        frame restriction.
+      deactivate_all_fragments:
+      - deactivate_all_fragments(self)
+      - Sets all fragments in the molecule to be inactive
+      distance_matrix:
+      - distance_matrix(self)
+      - Returns Matrix of interatom distances
+      extract_subsets:
+      - extract_subsets(*args,**kwargs)
+      - Overloaded function.
+      fcharge:
+      - fcharge(self,atom)
+      - Gets charge of <em>atom</em> (0-indexed including dummies)
+      find_highest_point_group:
+      - find_highest_point_group(self[,tolerance])
+      - Finds highest possible computational molecular point group
+      find_point_group:
+      - find_point_group(self[,tolerance])
+      - Finds computational molecular point group, user can override this with the
+        symmetry keyword
+      fix_com:
+      - fix_com(self,arg0)
+      - Sets whether to fix the Cartesian position, or to translate to the C.O.M.
+      fix_orientation:
+      - fix_orientation(self,arg0)
+      - Fix the orientation at its current frame.
+      flabel:
+      - flabel(self,atom)
+      - Gets the original label of the <em>atom</em> arg0 as given in the input file
+        (C2, H4)(0-indexed including dummies)
+      fmass:
+      - fmass(self,atom)
+      - Gets mass of <em>atom</em> (0-indexed including dummies)
+      form_symmetry_information:
+      - form_symmetry_information(self,arg0)
+      - Uses the point group object obtain by calling point_group()
+      format_molecule_for_mol:
+      - format_molecule_for_mol()
+      - Returns a string of Molecule formatted for mol2.
+      from_arrays:
+      - from_arrays([geom,elea,elez,elem,mass,...])
+      - Construct Molecule from unvalidated arrays and variables.
+      from_dict:
+      - from_dict(arg0)
+      - Returns a new Molecule constructed from python dictionary.
+      from_schema:
+      - from_schema(molschema[,return_dict,...])
+      - Construct Molecule from non-Psi4 schema.
+      from_string:
+      - from_string(molstr[,dtype,name,fix_com,...])
+      - Gets the cleaned up label of <em>atom</em> (C2 =&gt; C, H4 = H) (0-indexed
+        including dummies)
+      fsymbol:
+      - fsymbol(self,atom)
+      - Gets atomic number of <em>atom</em> from element (0-indexed including dummies)
+      ftrue_atomic_number:
+      - ftrue_atomic_number(self,atom)
+      - Gets the geometry [Bohr] as a (Natom X 3) matrix of coordinates (including
+        dummies)
+      full_geometry:
+      - full_geometry(self)
+      - Gets n in Cnv, etc.; If there is no n (e.g. Td) it's the highest-order rotation
+        axis.
+      full_pg_n:
+      - full_pg_n(self)
+      - x position of atom arg0 (0-indexed including dummies in Bohr)
+      fx:
+      - fx(self,arg0)
+      - y position of atom arg0 (0-indexed including dummies in Bohr)
+      fy:
+      - fy(self,arg0)
+      - z position of atom arg0 (0-indexed including dummies in Bohr)
+      fz:
+      - fz(self,arg0)
+      - Gets the geometry [Bohr] as a (Natom X 3) matrix of coordinates (excluding
+        dummies)
+      geometry:
+      - geometry(self)
+      - Gets the charge of each fragment
+      get_fragment_charges:
+      - get_fragment_charges(self)
+      - Gets the multiplicity of each fragment
+      get_fragment_multiplicities:
+      - get_fragment_multiplicities(self)
+      - Returns a list describing how to handle each fragment {Real, Ghost, Absent}
+      get_fragment_types:
+      - get_fragment_types(self)
+      - Returns list of pairs of atom ranges defining each fragment from parent molecule(fragments[frag_ind]
+        = &lt;Afirst,Alast+1&gt;)
+      get_fragments:
+      - get_fragments(self)
+      - Gets point group name such as C3v or S8
+      get_full_point_group:
+      - get_full_point_group(self)
+      - Gets point group name such as Cnv or Sn
+      get_full_point_group_with_n:
+      - get_full_point_group_with_n(self)
+      - Returns the value of variable arg0 in the structural variables list
+      get_variable:
+      - get_variable(self,arg0)
+      - Get whether or not this molecule has at least one zmatrix entry
+      has_zmatrix:
+      - has_zmatrix(self)
+      - Returns intertial tensor
+      inertia_tensor:
+      - inertia_tensor(self)
+      - Returns unit conversion to [a0] for geometry
+      input_units_to_au:
+      - input_units_to_au(self)
+      - Returns Irreducible Representation symmetry labels
+      irrep_labels:
+      - irrep_labels(self)
+      - Checks if variable arg0 is in the structural variables list
+      is_variable:
+      - is_variable(self,arg0)
+      - Gets the original label of the <em>atom</em> as given in the input file (C2,
+        H4)(0-indexed without dummies)
+      label:
+      - label(self,atom)
+      - Returns mass of <em>atom</em> (0-indexed)
+      mass:
+      - mass(self,atom)
+      - Mass number (A) of atom if known, else -1
+      mass_number:
+      - mass_number(self,arg0)
+      - Gets the molecular charge
+      molecular_charge:
+      - molecular_charge(self)
+      - Moves molecule to center of mass
+      move_to_com:
+      - move_to_com(self)
+      - Gets the multiplicity (defined as 2Ms + 1)
+      multiplicity:
+      - multiplicity(self)
+      - Number of real and dummy atoms
+      nallatom:
+      - nallatom(self)
+      - Gets molecule name
+      name:
+      - name(self)
+      - Number of real atoms
+      natom:
+      - natom(self)
+      - Gets the number of fragments in the molecule
+      nfragments:
+      - nfragments(self)
+      - Overloaded function.
+      nuclear_dipole:
+      - nuclear_dipole(*args,**kwargs)
+      - Computes nuclear repulsion energy
+      nuclear_repulsion_energy:
+      - nuclear_repulsion_energy(self[,dipole_field])
+      - Returns first derivative of nuclear repulsion energy as a matrix (natom, 3)
+      nuclear_repulsion_energy_deriv1:
+      - nuclear_repulsion_energy_deriv1(self[,...])
+      - Returns second derivative of nuclear repulsion energy as a matrix (natom X
+        3, natom X 3)
+      nuclear_repulsion_energy_deriv2:
+      - nuclear_repulsion_energy_deriv2(self)
+      - Get whether or not orientation is fixed
+      orientation_fixed:
+      - orientation_fixed(self)
+      - Returns the current point group object
+      point_group:
+      - point_group(self)
+      - Print the bond angle geometrical parameters
+      print_bond_angles:
+      - print_bond_angles(self)
+      - Prints the molecule in Cartesians in input units adding fragment separators
+      print_cluster:
+      - print_cluster(self)
+      - Print the interatomic distance geometrical parameters
+      print_distances:
+      - print_distances(self)
+      - Prints the molecule as Cartesian or ZMatrix entries, just as inputted.
+      print_in_input_format:
+      - print_in_input_format(self)
+      - Prints the molecule in Cartesians in input units to output file
+      print_out:
+      - print_out(self)
+      - Prints the molecule in Cartesians in Angstroms to output file
+      print_out_in_angstrom:
+      - print_out_in_angstrom(self)
+      - Prints the molecule in Cartesians in Bohr to output file
+      print_out_in_bohr:
+      - print_out_in_bohr(self)
+      - Print the out-of-plane angle geometrical parameters to output file
+      print_out_of_planes:
+      - print_out_of_planes(self)
+      - Print the rotational constants to output file
+      print_rotational_constants:
+      - print_rotational_constants(self)
+      - Gets molecule provenance
+      provenance:
+      - provenance(self)
+      - Do reinterpret coordinate entries during update_geometry().
+      reinterpret_coordentry:
+      - reinterpret_coordentry(self,arg0)
+      - Overrides symmetry from outside the molecule string
+      reset_point_group:
+      - reset_point_group(self,arg0)
+      - Returns the rotational constants [cm^-1] of the molecule
+      rotational_constants:
+      - rotational_constants(self)
+      - Returns number of unique orientations of the rigid molecule that only interchange
+        identical atoms
+      rotational_symmetry_number:
+      - rotational_symmetry_number(self)
+      - Returns rotor type, e.g. 'RT_ATOM' or 'RT_SYMMETRIC_TOP'.
+      rotor_type:
+      - rotor_type(self)
+      - Compute dispersion correction via Grimme's DFTD3 program.
+      run_dftd3:
+      - run_dftd3([func,dashlvl,dashparam,...])
+      - Compute dispersion correction via Grimme's DFTD4 program.
+      run_dftd4:
+      - run_dftd4([func,dashlvl,dashparam,...])
+      - Compute geometrical BSSE correction via Grimme's GCP program.
+      run_gcp:
+      - run_gcp([func,dertype,verbose])
+      - Saves the string of an XYZ file to arg2
+      save_string_xyz:
+      - save_string_xyz(self)
+      - Saves an XYZ file to arg2
+      save_string_xyz_file:
+      - save_string_xyz_file(self)
+      - Saves an XYZ file to arg0
+      save_xyz_file:
+      - save_xyz_file(self,arg0,arg1)
+      - Returns the Schoenflies symbol
+      schoenflies_symbol:
+      - schoenflies_symbol(self)
+      - Tester for B787 by shifting, rotating, and atom shuffling <cite>ref_mol</cite>
+        and checking that the aligner returns the opposite transformation.
+      scramble:
+      - scramble([do_shift,do_rotate,do_resort,...])
+      - Sets the specified fragment arg0 to be Real
+      set_active_fragment:
+      - set_active_fragment(self,arg0)
+      - Sets the specified list arg0 of fragments to be Real
+      set_active_fragments:
+      - set_active_fragments(self,arg0)
+      - Sets basis set arg0 to all atoms
+      set_basis_all_atoms:
+      - set_basis_all_atoms(self,arg0,arg1)
+      - Sets basis set arg1 to all atoms with label (e.g., H4) arg0
+      set_basis_by_label:
+      - set_basis_by_label(self,arg0,arg1,arg2)
+      - Sets basis set arg1 to all atoms with number arg0
+      set_basis_by_number:
+      - set_basis_by_number(self,arg0,arg1,arg2)
+      - Sets basis set arg1 to all atoms with symbol (e.g., H) arg0
+      set_basis_by_symbol:
+      - set_basis_by_symbol(self,arg0,arg1,arg2)
+      - Sets molecule comment
+      set_comment:
+      - set_comment(self,arg0)
+      - Sets molecule connectivity
+      set_connectivity:
+      - set_connectivity(self,arg0)
+      - Sets the geometry, given a (Natom X 3) matrix arg0 of coordinates (in Bohr)
+        (including dummies
+      set_full_geometry:
+      - set_full_geometry(self,arg0)
+      - Sets the geometry, given a (Natom X 3) matrix arg0 of coordinates [a0] (excluding
+        dummies)
+      set_geometry:
+      - set_geometry(self,arg0)
+      - Sets the specified fragment arg0 to be Ghost
+      set_ghost_fragment:
+      - set_ghost_fragment(self,arg0)
+      - Sets the specified list arg0 of fragments to be Ghost
+      set_ghost_fragments:
+      - set_ghost_fragments(self,arg0)
+      - Sets unit conversion to [a0] for geometry
+      set_input_units_to_au:
+      - set_input_units_to_au(self,arg0)
+      - Sets mass of <em>atom</em> (0-indexed) to <em>mass</em> (good for isotopic
+        substitutions)
+      set_mass:
+      - set_mass(self,atom,mass)
+      - Change the overall molecular charge.
+      set_molecular_charge:
+      - set_molecular_charge(self,arg0)
+      - Change the multiplicity (defined as 2S + 1).
+      set_multiplicity:
+      - set_multiplicity(self,arg0)
+      - Sets molecule name
+      set_name:
+      - set_name(self,arg0)
+      - Set the nuclear charge of the given atom arg0 to the value arg1 (primarily
+        for ECP).
+      set_nuclear_charge:
+      - set_nuclear_charge(self,arg0,arg1)
+      - Sets the molecular point group to the point group object arg0
+      set_point_group:
+      - set_point_group(self,arg0)
+      - Sets molecule provenance
+      set_provenance:
+      - set_provenance(self,arg0)
+      - Sets units (Angstrom or Bohr) used to define the geometry.
+      set_units:
+      - set_units(self,arg0)
+      - Sets the value arg1 to the variable arg0 in the list of structure variables,
+        then calls update_geometry()
+      set_variable:
+      - set_variable(self,arg0,arg1)
+      - Gets the cleaned up label of <em>atom</em> (C2 =&gt; C, H4 = H) (0-indexed
+        without dummies)
+      symbol:
+      - symbol(self,atom)
+      - Finds the highest point Abelian point group within the specified tolerance,
+        and forces the geometry to have that symmetry.
+      symmetrize:
+      - symmetrize(self,arg0)
+      - Returns the symmetry specified in the input
+      symmetry_from_input:
+      - symmetry_from_input(self)
+      - Exports coordinate info into NumPy arrays.
+      to_arrays:
+      - to_arrays([dummy,ghost_as_dummy])
+      - Serializes instance into Molecule dictionary.
+      to_dict:
+      - to_dict([force_c1,force_units,np_out])
+      - Serializes instance into dictionary according to schema <cite>dtype</cite>.
+      to_schema:
+      - to_schema(dtype[,units])
+      - Format a string representation of QM molecule.
+      to_string:
+      - to_string(dtype[,units,atom_format,...])
+      - Translates molecule by arg0
+      translate:
+      - translate(self,arg0)
+      - Gets atomic number of <em>atom</em> from element (0-indexed without dummies)
+      true_atomic_number:
+      - true_atomic_number(self,atom)
+      - Returns units used to define the geometry, i.e. 'Angstrom' or 'Bohr'.
+      units:
+      - units(self)
+      - Reevaluates the geometry with current variable values, orientation directives,
+        etc.
+      update_geometry:
+      - update_geometry(self)
+      - x position [Bohr] of atom arg0 (0-indexed without dummies)
+      x:
+      - x(self,arg0)
+      - Return the Vector3 for atom i (0-indexed without dummies)
+      xyz:
+      - xyz(self,i)
+      - y position [Bohr] of atom arg0 (0-indexed without dummies)
+      y:
+      - y(self,arg0)
+      - z position [Bohr] of atom arg0 (0-indexed without dummies)
+      z:
+      - z(self,arg0)
+      - None
+  mospace:
+    description: Defines orbital spaces in which to transform integrals
+    element:
+      aindex:
+      - aIndex(self)
+      - Get the alpha orbital indexing array
+      all:
+      - all()
+      - Get the beta orbital indexing array
+      aorbs:
+      - aOrbs(self)
+      - Get the alpha orbitals
+      bindex:
+      - bIndex(self)
+      - Get the beta orbitals
+      borbs:
+      - bOrbs(self)
+      - Get the unique identifier for this space
+      dum:
+      - dum()
+      - None
+      fzc:
+      - fzc()
+      - None
+      fzv:
+      - fzv()
+      - None
+      label:
+      - label(self)
+      - None
+      nil:
+      - nil()
+      - None
+      occ:
+      - occ()
+      - None
+      vir:
+      - vir()
+      - None
+  mowriter:
+    description: Writes the MOs
+    element:
+      write:
+      - write(self)
+      - Write the MOs
+  multipoleint:
+    description: Computes arbitrary-order multipole integrals
+    element: null
+  multipolesymmetry:
+    description: docstring
+    element:
+      create_matrices:
+      - create_matrices(self,arg0)
+      - docstring
+  nablaint:
+    description: Computes nabla integrals
+    element: null
+  numinthelper:
+    description: Computes numerical integrals using a DFT grid.
+    element:
+      dd_density_integral:
+      - dd_density_integral(self,grid_data,D)
+      - Compute an integral int rho(r) f(r) where f is a vector-valued function.
+      density_integral:
+      - density_integral(self,grid_data,D)
+      - Compute an integral int rho(r) f(r) where f is a vector-valued function.
+      numint_grid:
+      - numint_grid(self)
+      - Compute an integral int chi_mu(r) chi_nu(r) f(r) where f is a scalar function
+        represented for each block of points of the integration grid as a vector of
+        n_points.
+      potential_integral:
+      - potential_integral(self,arg0)
+      - None
+  oeprop:
+    description: docstring
+    element:
+      add:
+      - add(self,arg0)
+      - Append the given task to the list of properties to compute.
+      clear:
+      - clear(self)
+      - Clear the list of properties to compute.
+      compute:
+      - compute(self)
+      - Compute the properties.
+      exvals:
+      - Exvals(self)
+      - The x component of the field (in a.u.) at each grid point
+      eyvals:
+      - Eyvals(self)
+      - The y component of the field (in a.u.) at each grid point
+      ezvals:
+      - Ezvals(self)
+      - The z component of the field (in a.u.) at each grid point
+      set_da_ao:
+      - set_Da_ao(self,Da[,symmetry])
+      - docstring
+      set_da_mo:
+      - set_Da_mo(self,arg0)
+      - docstring
+      set_da_so:
+      - set_Da_so(self,arg0)
+      - docstring
+      set_db_ao:
+      - set_Db_ao(self,Db[,symmetry])
+      - docstring
+      set_db_mo:
+      - set_Db_mo(self,arg0)
+      - docstring
+      set_db_so:
+      - set_Db_so(self,arg0)
+      - docstring
+      set_names:
+      - set_names(self,arg0)
+      - Instruct OEProp to save variables under all specified names.
+      set_title:
+      - set_title(self,title)
+      - Title OEProp for print purposes.
+      vvals:
+      - Vvals(self)
+      - The electrostatic potential (in a.u.) at each grid point
+  onebodyaoint:
+    description: Basis class for all one-electron integrals
+    element:
+      compute:
+      - compute(self,arg0)
+      - The basis set on center one
+      compute_shell:
+      - compute_shell(self,arg0,arg1)
+      - The basis set on center one
+  onebodysoint:
+    description: ''
+    element: null
+  options:
+    description: docstring
+    element:
+      add_array:
+      - add_array(self,arg0)
+      - add array option
+      add_bool:
+      - add_bool(self,arg0,arg1)
+      - add bool option
+      add_int:
+      - add_int(self,arg0,arg1)
+      - add int option
+      add_str:
+      - add_str(self,arg0,arg1,arg2)
+      - add string option
+      add_str_i:
+      - add_str_i(self,arg0,arg1,arg2)
+      - add string option
+      get_bool:
+      - get_bool(self,arg0)
+      - get boolean option
+      get_current_module:
+      - get_current_module(self)
+      - gets current module
+      get_double:
+      - get_double(self,arg0)
+      - get double option
+      get_int:
+      - get_int(self,arg0)
+      - get integer option
+      get_int_vector:
+      - get_int_vector(self,arg0)
+      - get int vector option
+      get_str:
+      - get_str(*args,**kwargs)
+      - Overloaded function.
+      print_global_options:
+      - print_global_options(self)
+      - print the global, cross-module options
+      print_module_options:
+      - print_module_options(self)
+      - print global and local options prepared for current module
+      read_globals:
+      - read_globals(self)
+      - expert
+      set_array:
+      - set_array(self,arg0,arg1)
+      - set array option
+      set_bool:
+      - set_bool(self,arg0,arg1,arg2)
+      - set bool option
+      set_current_module:
+      - set_current_module(self,arg0)
+      - sets <em>arg0</em> (all CAPS) as current module
+      set_double:
+      - set_double(self,arg0,arg1,arg2)
+      - set double option
+      set_int:
+      - set_int(self,arg0,arg1,arg2)
+      - set int option
+      set_read_globals:
+      - set_read_globals(self,arg0)
+      - expert
+      set_str:
+      - set_str(self,arg0,arg1,arg2)
+      - set string option
+      set_str_i:
+      - set_str_i(self,arg0,arg1,arg2)
+      - set string option
+      validate_options:
+      - validate_options(self)
+      - validate options for <em>arg0</em> module
+  orbitalspace:
+    description: Contains information about the orbitals
+    element:
+      basisset:
+      - basisset(self)
+      - The AO basis set used to create C
+      build_cabs_space:
+      - build_cabs_space(orb_space,ri_space[,...])
+      - Given two spaces, it projects out one space from the other and returns the
+        new spaces                     The first argument (orb_space) is the space
+        to project out.
+      build_ri_space:
+      - build_ri_space(combined[,lindep_tol])
+      - Given combined basis sets, it constructs an orthogonalized                     space
+        with the same span.
+      c:
+      - C(self)
+      - MO coefficient matrix, AO-&gt;MO or SO-&gt;MO transformation matrix
+      dim:
+      - dim(self)
+      - MO dimensions
+      evals:
+      - evals(self)
+      - Corresponding eigenvalues of the C matrix
+      id:
+      - id(self)
+      - Unique identifier
+      integral:
+      - integral(self)
+      - The integral factory used to create C
+      name:
+      - name(self)
+      - Name of the orbital space
+      nirrep:
+      - nirrep(self)
+      - Returns number of irreps
+      print_out:
+      - print_out(self)
+      - Print information about the orbital space to the output file
+  overlapint:
+    description: Computes overlap integrals
+    element: null
+  petitelist:
+    description: Handles symmetry transformations
+    element:
+      aotoso:
+      - aotoso(self)
+      - Return the AO-&gt;SO coefficient matrix
+      print:
+      - print(self,arg0)
+      - Print to outfile
+      sotoao:
+      - sotoao(self)
+      - Return the SO-&gt;AO coefficient matrix
+  pmlocalizer:
+    description: Performs Pipek-Mezey orbital localization
+    element: null
+  pointfunctions:
+    description: docstring
+    element:
+      ansatz:
+      - ansatz(self)
+      - docstring
+      compute_points:
+      - compute_points(self,block[,force_compute])
+      - docstring
+      orbital_values:
+      - orbital_values(self)
+      - docstring
+      point_values:
+      - point_values(self)
+      - docstring
+      print_out:
+      - print_out(self[,out_fname,print])
+      - docstring
+      set_ansatz:
+      - set_ansatz(self,arg0)
+      - docstring
+      set_pointers:
+      - set_pointers(*args,**kwargs)
+      - Overloaded function.
+  pointgroup:
+    description: Contains information about the point group
+    element:
+      bits:
+      - bits(self)
+      - Return the bit representation of the point group
+      char_table:
+      - char_table(self)
+      - Return the CharacterTable of the point group
+      full_name:
+      - full_name(self)
+      - Return the Schoenflies symbol with direction
+      order:
+      - order(self)
+      - Return the order of the point group
+      symbol:
+      - symbol(self)
+      - Returns Schoenflies symbol for point group
+  potentialint:
+    description: Computes potential integrals
+    element: null
+  primitivetype:
+    description: May be Normalized or Unnormalized
+    element: null
+  prop:
+    description: docstring
+    element: null
+  protointvector:
+    description: ''
+    element: null
+  protovector:
+    description: ''
+    element: null
+  psio_entry:
+    description: docstring
+    element: null
+  psireturntype:
+    description: Return status.
+    element: null
+  quadrupoleint:
+    description: Computes quadrupole integrals
+    element: null
+  rhf:
+    description: docstring
+    element:
+      c1_deep_copy:
+      - c1_deep_copy(self,basis)
+      - Returns a new wavefunction with internal data converted to C_1 symmetry, using
+        pre-c1-constructed BasisSet <em>basis</em>
+      compute_orbital_gradient:
+      - compute_orbital_gradient(save_fock,...)
+      - docstring
+      diis:
+      - diis(self,arg0)
+      - docstring
+      mintshelper:
+      - mintshelper(self)
+      - The MintsHelper object
+      twoel_hx_full:
+      - twoel_Hx_full(self,arg0,arg1,arg2,arg3)
+      - Two-electron Hessian-vector products.
+  rksfunctions:
+    description: docstring
+    element: null
+  rohf:
+    description: docstring
+    element:
+      c1_deep_copy:
+      - c1_deep_copy(self,basis)
+      - Returns a new wavefunction with internal data converted to C_1 symmetry, using
+        pre-c1-constructed BasisSet <em>basis</em>
+      compute_orbital_gradient:
+      - compute_orbital_gradient(save_fock,...)
+      - docstring
+      ct:
+      - Ct(self)
+      - MO coefficients in the orthogonalized MO basis.
+      diis:
+      - diis(self,arg0)
+      - docstring
+      mintshelper:
+      - mintshelper(self)
+      - The MintsHelper object
+      mofa:
+      - moFa(self)
+      - docstring
+      mofb:
+      - moFb(self)
+      - docstring
+      mofeff:
+      - moFeff(self)
+      - docstring
+      sofeff:
+      - soFeff(self)
+      - Returns the effective Fock matrix in the orthogonalized SO basis.
+  sadguess:
+    description: docstring
+    element:
+      build_sad:
+      - build_SAD(arg0,arg1)
+      - None
+      ca:
+      - Ca(self)
+      - None
+      cb:
+      - Cb(self)
+      - None
+      compute_guess:
+      - compute_guess(self)
+      - None
+      da:
+      - Da(self)
+      - None
+      db:
+      - Db(self)
+      - None
+      set_atomic_fit_bases:
+      - set_atomic_fit_bases(self,arg0)
+      - None
+      set_debug:
+      - set_debug(self,arg0)
+      - None
+      set_print:
+      - set_print(self,arg0)
+      - None
+  salccomponent:
+    description: Component of a Cartesian displacement SALC in the basis of atomic
+      displacements.
+    element: null
+  savetype:
+    description: The layout of the matrix for saving
+    element: null
+  shellinfo:
+    description: ''
+    element: null
+  slice:
+    description: Slicing for Matrix and Vector objects
+    element:
+      begin:
+      - begin(self)
+      - Get the first element of this slice
+      end:
+      - end(self)
+      - Get the past-the-end element of this slice
+  sobasisset:
+    description: An SOBasis object describes the transformation from an atomic orbital
+      basis to a symmetry orbital basis.
+    element:
+      petite_list:
+      - petite_list(self)
+      - Return the PetiteList object used in creating this SO basis
+  somcscf:
+    description: docstring
+    element:
+      approx_solve:
+      - approx_solve(self)
+      - None
+      ck:
+      - Ck(self,arg0,arg1)
+      - None
+      compute_afock:
+      - compute_AFock(self,arg0)
+      - None
+      compute_hk:
+      - compute_Hk(self,arg0)
+      - None
+      compute_q:
+      - compute_Q(self,arg0)
+      - None
+      compute_qk:
+      - compute_Qk(self,arg0,arg1,arg2)
+      - None
+      current_afock:
+      - current_AFock(self)
+      - None
+      current_ci_energy:
+      - current_ci_energy(self)
+      - None
+      current_docc_energy:
+      - current_docc_energy(self)
+      - None
+      current_ifock:
+      - current_IFock(self)
+      - None
+      current_total_energy:
+      - current_total_energy(self)
+      - None
+      form_rotation_matrix:
+      - form_rotation_matrix(self,x[,order])
+      - None
+      gradient:
+      - gradient(self)
+      - None
+      gradient_rms:
+      - gradient_rms(self)
+      - None
+      h_approx_diag:
+      - H_approx_diag(self)
+      - None
+      rhf_energy:
+      - rhf_energy(self,arg0)
+      - None
+      solve:
+      - solve(self,arg0,arg1,arg2)
+      - None
+      update:
+      - update(self,arg0,arg1,arg2,arg3,arg4)
+      - None
+      zero_redundant:
+      - zero_redundant(self,arg0)
+      - None
+  superfunctional:
+    description: docstring
+    element:
+      add_c_functional:
+      - add_c_functional(self,arg0)
+      - Add a correlation Functional.
+      add_x_functional:
+      - add_x_functional(self,arg0)
+      - Add a exchange Functional.
+      allocate:
+      - allocate(self)
+      - Allocates the vectors, should be called after ansatz or npoint changes.
+      ansatz:
+      - ansatz(self)
+      - SuperFunctional rung.
+      blank:
+      - blank()
+      - Initialize a blank SuperFunctional.
+      c_alpha:
+      - c_alpha(self)
+      - Amount of MP2 correlation.
+      c_functional:
+      - c_functional(self,arg0)
+      - Returns the desired C Functional.
+      c_functionals:
+      - c_functionals(self)
+      - Returns all C Functionals.
+      c_omega:
+      - c_omega(self)
+      - Range-seperated correlation parameter.
+      c_os_alpha:
+      - c_os_alpha(self)
+      - Amount of SS MP2 correlation.
+      c_ss_alpha:
+      - c_ss_alpha(self)
+      - Amount of OS MP2 correlation.
+      citation:
+      - citation(self)
+      - SuperFunctional citation.
+      compute_functional:
+      - compute_functional(self,vals[,npoints,...])
+      - Computes the SuperFunctional.
+      density_tolerance:
+      - density_tolerance(self)
+      - Density threshold for LibXC.
+      deriv:
+      - deriv(self)
+      - Maximum derivative to compute.
+      description:
+      - description(self)
+      - The description of the SuperFunctional
+      grac_alpha:
+      - grac_alpha(self)
+      - GRAC Alpha.
+      grac_beta:
+      - grac_beta(self)
+      - GRAC Beta.
+      grac_shift:
+      - grac_shift(self)
+      - Shift of the bulk potenital.
+      is_c_hybrid:
+      - is_c_hybrid(self)
+      - Requires MP2 correlation?
+      is_c_lrc:
+      - is_c_lrc(self)
+      - Contains range-seperated correlation?
+      is_c_scs_hybrid:
+      - is_c_scs_hybrid(self)
+      - Requires SCS-MP2 correlation?
+      is_gga:
+      - is_gga(self)
+      - Is this a GGA?
+      is_libxc_func:
+      - is_libxc_func(self)
+      - A full SuperFunctional definition from LibXC.
+      is_meta:
+      - is_meta(self)
+      - Is this a MGGA?
+      is_x_hybrid:
+      - is_x_hybrid(self)
+      - Requires exact exchange?
+      is_x_lrc:
+      - is_x_lrc(self)
+      - Contains range-seperated exchange?
+      max_points:
+      - max_points(self)
+      - Maximum number of grid points per block.
+      name:
+      - name(self)
+      - The name of the SuperFunctional.
+      needs_grac:
+      - needs_grac(self)
+      - Does this functional need GRAC.
+      needs_vv10:
+      - needs_vv10(self)
+      - Does this functional need VV10 dispersion.
+      needs_xc:
+      - needs_xc(self)
+      - Does this functional need XC quantities.
+      print_density_threshold:
+      - print_density_threshold(self)
+      - Queries the LibXCFunctionals for their density threshold values
+      print_detail:
+      - print_detail(self,arg0)
+      - Prints all SuperFunctional information.
+      print_out:
+      - print_out(self)
+      - Prints out functional details.
+      set_c_alpha:
+      - set_c_alpha(self,arg0)
+      - Sets the amount of MP2 correlation.
+      set_c_omega:
+      - set_c_omega(self,arg0)
+      - Sets the range-seperation correlation parameter.
+      set_c_os_alpha:
+      - set_c_os_alpha(self,arg0)
+      - Sets the amount of OS MP2 correlation.
+      set_c_ss_alpha:
+      - set_c_ss_alpha(self,arg0)
+      - Sets the amount of SS MP2 correlation.
+      set_citation:
+      - set_citation(self,arg0)
+      - Sets the SuperFunctional citation.
+      set_density_tolerance:
+      - set_density_tolerance(self,arg0)
+      - Sets the density threshold for LibXC.
+      set_deriv:
+      - set_deriv(self,arg0)
+      - Sets the derivative level.
+      set_description:
+      - set_description(self,arg0)
+      - Sets the SuperFunctional description.
+      set_do_vv10:
+      - set_do_vv10(self,arg0)
+      - Sets whether to do VV10 correction.
+      set_grac_alpha:
+      - set_grac_alpha(self,arg0)
+      - Sets the GRAC alpha parameter.
+      set_grac_beta:
+      - set_grac_beta(self,arg0)
+      - Sets the GRAC beta parameter.
+      set_grac_shift:
+      - set_grac_shift(self,arg0)
+      - Sets the GRAC bulk shift value.
+      set_lock:
+      - set_lock(self,arg0)
+      - Locks the functional to prevent changes.
+      set_max_points:
+      - set_max_points(self,arg0)
+      - Sets the maximum number of points.
+      set_name:
+      - set_name(self,arg0)
+      - Sets the SuperFunctional name.
+      set_vv10_b:
+      - set_vv10_b(self,arg0)
+      - Sets the VV10 b parameter.
+      set_vv10_c:
+      - set_vv10_c(self,arg0)
+      - Sets the VV10 c parameter.
+      set_x_alpha:
+      - set_x_alpha(self,arg0)
+      - Sets the amount of exact global HF exchange.
+      set_x_beta:
+      - set_x_beta(self,arg0)
+      - Sets how much more long-range exchange than short-range exchange.
+      set_x_omega:
+      - set_x_omega(self,arg0)
+      - Sets the range-seperation exchange parameter.
+      set_xclib_description:
+      - set_xclib_description(self,arg0)
+      - Sets the LibXC version and citation string
+      test_functional:
+      - test_functional(self,arg0,arg1,arg2,...)
+      - Quick testing capabilities.
+      value:
+      - value(self,arg0)
+      - Returns a given internal value.
+      values:
+      - values(self)
+      - Return all internal values.
+      vv10_b:
+      - vv10_b(self)
+      - The VV10 b parameter.
+      vv10_c:
+      - vv10_c(self)
+      - The VV10 c parameter.
+      x_alpha:
+      - x_alpha(self)
+      - Amount of exact HF exchange.
+      x_beta:
+      - x_beta(self)
+      - Amount of exact HF exchange.
+      x_functional:
+      - x_functional(self,arg0)
+      - Returns the desired X Functional.
+      x_functionals:
+      - x_functionals(self)
+      - Returns all X Functionals.
+      x_omega:
+      - x_omega(self)
+      - Range-seperated exchange parameter.
+      xc_build:
+      - XC_build(name,unpolarized[,tweak])
+      - Builds a SuperFunctional from a XC string.
+      xclib_description:
+      - xclib_description(self)
+      - LibXC version and citation string.
+  symmetryoperation:
+    description: Class to provide a 3 by 3 matrix representation of a symmetry operation,
+      such as a rotation or reflection.
+    element:
+      c2_x:
+      - c2_x(self)
+      - Set equal to C2 about the x axis
+      c2_y:
+      - c2_y(self)
+      - Set equal to C2 about the y axis
+      c2_z:
+      - c2_z(self)
+      - Set equal to C2 about the z axis
+      e:
+      - E(self)
+      - Set equal to E
+      i:
+      - i(self)
+      - Set equal to an inversion
+      matrix:
+      - matrix(self)
+      - Return the matrix for the operation on Cartesians
+      operate:
+      - operate(self,arg0)
+      - Performs the operation arg2 * arg1
+      rotate_n:
+      - rotate_n(self,arg0)
+      - Set equal to a clockwise rotation by 2pi/n
+      rotate_theta:
+      - rotate_theta(self,arg0)
+      - Set equal to a clockwise rotation by theta
+      sigma_xy:
+      - sigma_xy(self)
+      - Set equal to reflection in xy plane
+      sigma_xz:
+      - sigma_xz(self)
+      - Set equal to reflection in xz plane
+      sigma_yz:
+      - sigma_yz(self)
+      - Set equal to reflection in yz plane
+      trace:
+      - trace(self)
+      - Returns trace of transformation matrix
+      transform:
+      - transform(self,arg0)
+      - Performs the transform arg2 * arg1 * arg2~
+      transpose:
+      - transpose(self)
+      - Performs transposition of matrix operation
+      unit:
+      - unit(self)
+      - Set equal to a unit matrix
+      zero:
+      - zero(self)
+      - Zero out the symmetry operation
+  threecenteroverlapint:
+    description: Three center overlap integrals
+    element:
+      compute_shell:
+      - compute_shell(self,arg0,arg1,arg2)
+      - Compute the integrals of the form (a|b|c)
+  tlaplacedenominator:
+    description: Computer class for a Laplace factorization of the six-index energy
+      denominator in coupled-cluster theory
+    element:
+      denominator_occ:
+      - denominator_occ(self)
+      - Returns the occupied orbital Laplace weights of the factorized triples denominator
+        (nweights * nocc)
+      denominator_vir:
+      - denominator_vir(self)
+      - Returns the virtual orbital Laplace weights of the factorized triples denominator
+        (nweights * nvirt)
+  tracelessquadrupoleint:
+    description: Computes traceless quadrupole integrals
+    element: null
+  twobodyaoint:
+    description: Two body integral base class
+    element:
+      compute_shell:
+      - compute_shell(self,arg0,arg1,arg2,arg3)
+      - Compute ERIs between 4 shells
+      shell_significant:
+      - shell_significant(self,arg0,arg1,arg2,arg3)
+      - Determines if the P,Q,R,S shell combination is significant
+      update_density:
+      - update_density(self,arg0)
+      - Update density matrix (c1 symmetry) for Density-matrix based integral screening
+  twoelectronint:
+    description: Computes two-electron repulsion integrals
+    element:
+      compute_shell:
+      - compute_shell(self,arg0,arg1,arg2,arg3)
+      - Compute ERIs between 4 shells
+      shell_significant:
+      - shell_significant(self,arg0,arg1,arg2,arg3)
+      - Determines if the P,Q,R,S shell combination is significant
+  uhf:
+    description: docstring
+    element:
+      c1_deep_copy:
+      - c1_deep_copy(self,basis)
+      - Returns a new wavefunction with internal data converted to C_1 symmetry, using
+        pre-c1-constructed BasisSet <em>basis</em>
+      compute_orbital_gradient:
+      - compute_orbital_gradient(save_fock,...)
+      - docstring
+      diis:
+      - diis(self,arg0)
+      - docstring
+      mintshelper:
+      - mintshelper(self)
+      - The MintsHelper object
+      stability_analysis:
+      - stability_analysis(self)
+      - Assess wfn stability and correct if requested
+  uksfunctions:
+    description: docstring
+    element: null
+  vbase:
+    description: docstring
+    element:
+      basis:
+      - basis(self)
+      - Returns the internal basis set.
+      build:
+      - build(arg0,arg1,arg2)
+      - Constructs a collocation cache to prevent recomputation.
+      build_collocation_cache:
+      - build_collocation_cache(self,arg0)
+      - Clears the collocation cache.
+      clear_collocation_cache:
+      - clear_collocation_cache(self)
+      - doctsring
+      compute_gradient:
+      - compute_gradient(self)
+      - Compute the DFT nuclear Hessian contribution.
+      compute_hessain:
+      - compute_hessain(self)
+      - Overloaded function.
+      compute_v:
+      - compute_V(self,arg0)
+      - doctsring
+      compute_vx:
+      - compute_Vx(self,arg0,arg1)
+      - Compute the DFT nuclear gradient contribution.
+      dao:
+      - Dao(self,arg0)
+      - Returns internal AO density.
+      finalize:
+      - finalize(*args,**kwargs)
+      - Returns the interal superfunctional.
+      functional:
+      - functional(self)
+      - Returns the requested BlockOPoints.
+      get_block:
+      - get_block(self,arg0)
+      - Returns the x, y, z, and weights of a grid as a tuple of NumPy array objects.
+      get_np_xyzw:
+      - get_np_xyzw()
+      - Returns the grid object.
+      grid:
+      - grid(self)
+      - Overloaded function.
+      initialize:
+      - initialize(*args,**kwargs)
+      - Total number of blocks.
+      nblocks:
+      - nblocks(self)
+      - Prints the objects header.
+      print_header:
+      - print_header(self)
+      - Returns the properties computer.
+      properties:
+      - properties(self)
+      - Returns the quadrature values.
+      quadrature_values:
+      - quadrature_values(self)
+      - Sets the internal density.
+      set_d:
+      - set_D(self,arg0)
+      - Sets the debug level of the object.
+      set_debug:
+      - set_debug(self,arg0)
+      - Sets the print level of the object.
+      set_print:
+      - set_print(self,arg0)
+      - None
+  vector:
+    description: Class for creating and manipulating vectors
+    element:
+      add:
+      - add(*args,**kwargs)
+      - The name of the Vector.
+      array_interface:
+      - array_interface(self)
+      - View with single irrep.
+      axpby:
+      - axpby(self,a,b,other)
+      - View with irreps.
+      axpy:
+      - axpy(self,a,other)
+      - Shape of the Psi4 data object.
+      clone:
+      - clone(self)
+      - Overloaded function.
+      copy:
+      - copy(self,arg0)
+      - Adds to this vector scaled by b another vector scaled by a; self &lt;- a *
+        other + b * self
+      dim:
+      - dim(self[,h])
+      - Adds to this vector (unscaled) another vector scaled by a; self &lt;- a *
+        other + self
+      dimpi:
+      - dimpi(self)
+      - Clone the vector
+      from_array:
+      - from_array([name,dim1,dim2])
+      - Copy another vector into this.
+      from_list:
+      - from_list(x)
+      - Returns the dimensions of the vector per irrep h
+      from_serial:
+      - from_serial()
+      - Returns the Dimension object
+      get:
+      - get(*args,**kwargs)
+      - 'Converts a <a class="reference external" href="https://numpy.org/doc/stable/reference/arrays.ndarray.html">NumPy
+        array</a> or list of NumPy arrays into a <span style="font-family: Optima,
+        sans-serif; text-transform: none;">P<span style="font-size: 82%;">SI</span>4</span>
+        <a class="reference internal" href="psi4.core.Matrix.html#psi4.core.Matrix"
+        title="psi4.core.Matrix"><code class="xref py py-class docutils literal notranslate"><span
+        class="pre">Matrix</span></code></a> or <a class="reference internal" href="#psi4.core.Vector"
+        title="psi4.core.Vector"><code class="xref py py-class docutils literal notranslate"><span
+        class="pre">Vector</span></code></a> (irrepped if list).'
+      get_block:
+      - get_block(self,slice)
+      - Converts serialized data to the correct Psi4 data type
+      init:
+      - init(self,arg0)
+      - Overloaded function.
+      load:
+      - load(self,psio,file)
+      - Get a vector block
+      nirrep:
+      - nirrep(self)
+      - Reallocate the data of the Vector.
+      np_read:
+      - np_read([prefix])
+      - Load the vector from disk
+      np_write:
+      - np_write([filename,prefix])
+      - Returns the number of irreps
+      print_out:
+      - print_out(self)
+      - Reads the data from a NumPy compressed or uncompressed file using <a class="reference
+        external" href="https://numpy.org/doc/stable/reference/generated/numpy.load.html#numpy.load"
+        title="(in NumPy v2.1)"><code class="xref py py-func docutils literal notranslate"><span
+        class="pre">numpy.load()</span></code></a>.
+      save:
+      - save(self,psio,file)
+      - Writes the irrepped matrix to a NumPy uncompressed file using <a class="reference
+        external" href="https://numpy.org/doc/stable/reference/generated/numpy.savez.html#numpy.savez"
+        title="(in NumPy v2.1)"><code class="xref py py-func docutils literal notranslate"><span
+        class="pre">numpy.savez()</span></code></a>.
+      scale:
+      - scale(self,sc)
+      - Prints the vector to the output file
+      set:
+      - set(*args,**kwargs)
+      - Save the vector to disk
+      set_block:
+      - set_block(self,slice,block)
+      - Scales the elements of a vector by sc
+      to_array:
+      - to_array([copy,dense])
+      - Overloaded function.
+      to_serial:
+      - to_serial()
+      - Set a vector block
+      vector_dot:
+      - vector_dot(self,other)
+      - 'Converts a <span style="font-family: Optima, sans-serif; text-transform:
+        none;">P<span style="font-size: 82%;">SI</span>4</span> Matrix or Vector to
+        a NumPy array.'
+      zero:
+      - zero(self)
+      - Converts an object with a <code class="docutils literal notranslate"><span
+        class="pre">.nph</span></code> accessor to a serialized dictionary
+  vector3:
+    description: Class for vectors of length three, often Cartesian coordinate vectors,
+      and their common operations
+    element:
+      cross:
+      - cross(self,arg0)
+      - Returns cross product of arg1 and arg2
+      distance:
+      - distance(self,arg0)
+      - Returns distance between two points represented by arg1 and arg2
+      dot:
+      - dot(self,arg0)
+      - Returns dot product of arg1 and arg2
+      norm:
+      - norm(self)
+      - Returns Euclidean norm of arg1
+      normalize:
+      - normalize(self)
+      - Returns vector of unit length and arg1 direction
+  wavefunction:
+    description: docstring
+    element:
+      alpha_orbital_space:
+      - alpha_orbital_space(self,id,basis,subset)
+      - Creates OrbitalSpace with information about the requested alpha orbital space.
+      aotoso:
+      - aotoso(self)
+      - Returns the Atomic Orbital to Symmetry Orbital transformer.
+      array_variable:
+      - array_variable(self,arg0)
+      - Returns copy of the requested (case-insensitive) Matrix QC variable.
+      array_variables:
+      - array_variables(self)
+      - Returns the dictionary of all Matrix QC variables.
+      arrays:
+      - arrays()
+      - Returns the set atomic point charges.
+      atomic_point_charges:
+      - atomic_point_charges(self)
+      - Projects a orbital matrix from one basis to another.
+      basis_projection:
+      - basis_projection(self,arg0,arg1,arg2,arg3)
+      - Returns the current orbital basis.
+      basisset:
+      - basisset(self)
+      - docstring
+      beta_orbital_space:
+      - beta_orbital_space(self,arg0,arg1,arg2)
+      - Build a wavefunction from minimal inputs, molecule and basis set.
+      build:
+      - build(mol[,basis,quiet])
+      - Returns a new wavefunction with internal data converted to <span class="math
+        notranslate nohighlight">\(C_1\)</span> symmetry, using pre-c1-constructed
+        <cite>basis</cite>
+      c1_deep_copy:
+      - c1_deep_copy(self,basis)
+      - Computes the energy of the Wavefunction.
+      ca:
+      - Ca(self)
+      - Returns the Alpha Orbitals.
+      ca_subset:
+      - Ca_subset(self,arg0,arg1)
+      - Returns the requested Alpha orbital subset.
+      cb:
+      - Cb(self)
+      - Returns the Beta Orbitals.
+      cb_subset:
+      - Cb_subset(self,arg0,arg1)
+      - Returns the requested Beta orbital subset.
+      compute_energy:
+      - compute_energy(self)
+      - Computes the gradient of the Wavefunction
+      compute_gradient:
+      - compute_gradient(self)
+      - Computes the Hessian of the Wavefunction.
+      compute_hessian:
+      - compute_hessian(self)
+      - Deep copies the internal data.
+      da:
+      - Da(self)
+      - Returns the Alpha Density Matrix.
+      da_subset:
+      - Da_subset(self,arg0)
+      - Returns the requested Alpha Density subset.
+      db:
+      - Db(self)
+      - Returns the Beta Density Matrix.
+      db_subset:
+      - Db_subset(self,arg0)
+      - Returns the requested Beta Density subset.
+      deep_copy:
+      - deep_copy(self,arg0)
+      - Removes the requested (case-insensitive) Matrix QC variable.
+      del_array_variable:
+      - del_array_variable(self,arg0)
+      - Removes the requested (case-insensitive) ExternalPotential QC variable.
+      del_potential_variable:
+      - del_potential_variable(self,arg0)
+      - Removes the requested (case-insensitive) double QC variable.
+      del_scalar_variable:
+      - del_scalar_variable(self,arg0)
+      - Removes scalar or array <a class="reference internal" href="../appendices.html#sec-appendices-qcvars"><span
+        class="std std-ref">QCVariable</span></a> <em>key</em> from <em>self</em>
+        if present.
+      del_variable:
+      - del_variable(key)
+      - Returns the number of doubly occupied orbitals per irrep.
+      doccpi:
+      - doccpi(self[,assume_socc_alpha])
+      - Returns the frozen-core energy
+      efzc:
+      - efzc(self)
+      - Returns the Wavefunction's energy.
+      energy:
+      - energy(self)
+      - Returns the Alpha Eigenvalues.
+      epsilon_a:
+      - epsilon_a(self)
+      - Returns the requested Alpha orbital energies subset.
+      epsilon_a_subset:
+      - epsilon_a_subset(self,basis,subset)
+      - Returns the Beta Eigenvalues.
+      epsilon_b:
+      - epsilon_b(self)
+      - Returns the requested Beta orbital energies subset.
+      epsilon_b_subset:
+      - epsilon_b_subset(self,basis,subset)
+      - returns electrostatic potentials at nuclei
+      esp_at_nuclei:
+      - esp_at_nuclei(self)
+      - Gets the requested external potential.
+      external_pot:
+      - external_pot(self)
+      - Specialized expert use only.
+      fa:
+      - Fa(self)
+      - Returns the Alpha Fock Matrix.
+      fa_subset:
+      - Fa_subset(self,arg0)
+      - Returns the Alpha Fock Matrix in the requested basis (AO,SO).
+      fb:
+      - Fb(self)
+      - Returns the Beta Fock Matrix.
+      fb_subset:
+      - Fb_subset(self,arg0)
+      - Returns the Beta Fock Matrix in the requested basis (AO,SO).
+      force_occpi:
+      - force_occpi(self,arg0,arg1)
+      - Returns the results of a frequency analysis.
+      frequencies:
+      - frequencies()
+      - Build Wavefunction from data laid out like <a class="reference internal" href="#psi4.core.Wavefunction.to_file"
+        title="psi4.core.Wavefunction.to_file"><code class="xref py py-meth docutils
+        literal notranslate"><span class="pre">to_file()</span></code></a>.
+      from_file:
+      - from_file(wfn_data)
+      - Returns the number of frozen core orbitals per irrep.
+      frzcpi:
+      - frzcpi(self)
+      - Returns the number of frozen virtual orbitals per irrep.
+      frzvpi:
+      - frzvpi(self)
+      - Returns the requested auxiliary basis.
+      get_array:
+      - get_array(key)
+      - Experimental!
+      get_basisset:
+      - get_basisset(self,arg0)
+      - Returns a vector of length 3, containing the x, y, and z dipole field strengths.
+      get_density:
+      - get_density(self,arg0)
+      - Get the print level of the Wavefunction.
+      get_dipole_field_strength:
+      - get_dipole_field_strength(self)
+      - Return canonical path to scratch file <cite>filenumber</cite> based on molecule
+        on <cite>self</cite>.
+      get_print:
+      - get_print(self)
+      - Returns the Wavefunction's gradient.
+      get_scratch_filename:
+      - get_scratch_filename(filenumber)
+      - Is the Matrix QC variable (case-insensitive) set? Prefer <a class="reference
+        internal" href="#psi4.core.Wavefunction.has_variable" title="psi4.core.Wavefunction.has_variable"><code
+        class="xref py py-meth docutils literal notranslate"><span class="pre">has_variable()</span></code></a>.
+      get_variable:
+      - get_variable(key)
+      - Is the ExternalPotential QC variable (case-insensitive) set? (This function
+        is provisional and might be removed in the future.)
+      gradient:
+      - gradient(self)
+      - Is the double QC variable (case-insensitive) set? Prefer <a class="reference
+        internal" href="#psi4.core.Wavefunction.has_variable" title="psi4.core.Wavefunction.has_variable"><code
+        class="xref py py-meth docutils literal notranslate"><span class="pre">has_variable()</span></code></a>.
+      h:
+      - H(self)
+      - Returns the 'Core' Matrix (Potential + Kinetic) Integrals.
+      has_array_variable:
+      - has_array_variable(self,arg0)
+      - Whether scalar or array <a class="reference internal" href="../appendices.html#sec-appendices-qcvars"><span
+        class="std std-ref">QCVariable</span></a> <em>key</em> has been set on <em>self</em>.
+      has_potential_variable:
+      - has_potential_variable(self,arg0)
+      - Returns the Wavefunction's Hessian.
+      has_scalar_variable:
+      - has_scalar_variable(self,arg0)
+      - Returns the Lagrangian Matrix.
+      has_variable:
+      - has_variable(key)
+      - Returns the current MintsHelper object.
+      hessian:
+      - hessian(self)
+      - returns the wavefunction's electronic orbital extents.
+      lagrangian:
+      - lagrangian(self)
+      - Name of the last/highest level of theory module (internal or external) touching
+        the wavefunction.
+      mintshelper:
+      - mintshelper(self)
+      - Returns the Wavefunction's molecule.
+      mo_extents:
+      - mo_extents(self)
+      - Number of Alpha electrons.
+      module:
+      - module(self)
+      - Returns the number of alpha orbitals per irrep.
+      molecule:
+      - molecule(self)
+      - The level of theory this wavefunction corresponds to.
+      nalpha:
+      - nalpha(self)
+      - Number of Beta electrons.
+      nalphapi:
+      - nalphapi(self)
+      - Returns the number of beta orbitals per irrep.
+      name:
+      - name(self)
+      - Number of frozen core electrons.
+      nbeta:
+      - nbeta(self)
+      - Number of irreps in the system.
+      nbetapi:
+      - nbetapi(self)
+      - Number of molecule orbitals.
+      nfrzc:
+      - nfrzc(self)
+      - Returns the number of molecular orbitals per irrep.
+      nirrep:
+      - nirrep(self)
+      - returns the natural orbital occupations on the wavefunction.
+      nmo:
+      - nmo(self)
+      - Number of symmetry orbitals.
+      nmopi:
+      - nmopi(self)
+      - Returns the number of symmetry orbitals per irrep.
+      no_occupations:
+      - no_occupations(self)
+      - Returns the Wavefunction's options object
+      nso:
+      - nso(self)
+      - Returns copy of the requested (case-insensitive) ExternalPotential QC variable
+        <em>key</em>.
+      nsopi:
+      - nsopi(self)
+      - Returns the dictionary of all ExternalPotential QC variables.
+      options:
+      - options(self)
+      - Returns the reference wavefunction.
+      pcm_enabled:
+      - PCM_enabled(self)
+      - Whether running a PCM calculation
+      potential_variable:
+      - potential_variable(self,key)
+      - Returns true if the alpha and beta densities are the same.
+      potential_variables:
+      - potential_variables(self)
+      - Returns true if the alpha and beta orbitals are the same.
+      reference_wavefunction:
+      - reference_wavefunction(self)
+      - Returns the requested (case-insensitive) double QC variable.
+      s:
+      - S(self)
+      - Returns the One-electron Overlap Matrix.
+      same_a_b_dens:
+      - same_a_b_dens(self)
+      - Returns the dictionary of all double QC variables.
+      same_a_b_orbs:
+      - same_a_b_orbs(self)
+      - Sets the requested (case-insensitive) Matrix QC variable.
+      scalar_variable:
+      - scalar_variable(self,arg0)
+      - Sets the requested auxiliary basis.
+      scalar_variables:
+      - scalar_variables(self)
+      - Sets the Wavefunction's energy.
+      set_array:
+      - set_array(key,val)
+      - Sets the requested external potential.
+      set_array_variable:
+      - set_array_variable(self,arg0,arg1)
+      - Sets the Wavefunction's gradient.
+      set_basisset:
+      - set_basisset(self,arg0,arg1)
+      - Sets the Wavefunction's Hessian.
+      set_energy:
+      - set_energy(self,arg0)
+      - Sets the orbital Lagrangian matrix.
+      set_external_potential:
+      - set_external_potential(self,arg0)
+      - Sets name of the last/highest level of theory module (internal or external)
+        touching the wavefunction.
+      set_gradient:
+      - set_gradient(self,arg0)
+      - Sets the level of theory this wavefunction corresponds to.
+      set_hessian:
+      - set_hessian(self,arg0)
+      - Sets the requested (case-insensitive) ExternalPotential QC variable.
+      set_lagrangian:
+      - set_lagrangian(self,arg0)
+      - Sets the print level of the Wavefunction.
+      set_module:
+      - set_module(self,module)
+      - docstring
+      set_name:
+      - set_name(self,arg0)
+      - Sets the requested (case-insensitive) double QC variable.
+      set_potential_variable:
+      - set_potential_variable(self,arg0,arg1)
+      - Sets scalar or array <a class="reference internal" href="../appendices.html#sec-appendices-qcvars"><span
+        class="std std-ref">QCVariable</span></a> <em>key</em> to <em>val</em> on
+        <em>self</em>.
+      set_print:
+      - set_print(self,arg0)
+      - Copies the pointers to the internal data.
+      set_reference_wavefunction:
+      - set_reference_wavefunction(self,arg0)
+      - Returns the symmetry orbitals basis.
+      set_scalar_variable:
+      - set_scalar_variable(self,arg0,arg1)
+      - Returns the number of singly occupied orbitals per irrep.
+      set_variable:
+      - set_variable(key,val)
+      - Serialize a Wavefunction object.
+      shallow_copy:
+      - shallow_copy(self,arg0)
+      - Return copy of scalar or array <a class="reference internal" href="../appendices.html#sec-appendices-qcvars"><span
+        class="std std-ref">QCVariable</span></a> <em>key</em> from <em>self</em>.
+      sobasisset:
+      - sobasisset(self)
+      - Return all scalar or array <a class="reference internal" href="../appendices.html#sec-appendices-qcvars"><span
+        class="std std-ref">QCVariables</span></a> from <em>self</em>.
+      soccpi:
+      - soccpi(self[,assume_socc_alpha])
+      - Writes wavefunction information in <em>wfn</em> to <em>filename</em> in molden
+        format.
+      to_file:
+      - to_file([filename])
+      - Write wavefunction information in <em>wfn</em> to <em>name</em> in NBO format.
+      variable:
+      - variable(key)
+      - None
+      variables:
+      - variables([include_deprecated_keys])
+      - None
+      write_molden:
+      - write_molden([filename,do_virtual,use_natural])
+      - None
+      write_nbo:
+      - write_nbo(name)
+      - None
+psi4.driver.p4util:
+  diis:
+    description: An object to assist in the DIIS extrpolation procedure.
+    element:
+      add:
+      - add(state,error)
+      - Adds a DIIS state and error vector to the DIIS object.
+      extrapolate:
+      - extrapolate([out])
+      - Extrapolates next state vector from the current set of state and error vectors.
+  gaussian:
+    description: Gaussian function on domain, centered at x_0 with broadening gamma.
+    element:
+      lineshape:
+      - lineshape(x_0)
+      - Gaussian function
+      maximum:
+      - maximum(x_0)
+      - Maximum value of Gaussian profile centered at x_0.
+  inpsight:
+    description: POV-Ray visualization.
+    element:
+      position_camera:
+      - position_camera()
+      - None
+      save_density:
+      - save_density([filename,overlap,n,caxis])
+      - None
+      save_molecule:
+      - save_molecule(filename)
+      - None
+      set_camera:
+      - set_camera(location,sky,up,right,...)
+      - None
+      set_color:
+      - set_color(Z,color)
+      - None
+      set_define:
+      - set_define(key,value)
+      - None
+      set_radius:
+      - set_radius(Z,radius)
+      - None
+      set_size:
+      - set_size(width,height)
+      - None
+      set_view:
+      - set_view(azimuth,elevation[,zoom])
+      - None
+      update_geometry:
+      - update_geometry()
+      - None
+  lineshape:
+    description: Lineshape ABC
+    element:
+      lineshape:
+      - lineshape(x_0)
+      - None
+      maximum:
+      - maximum(x_0)
+      - None
+  lorentzian:
+    description: Lorentzian function on domain, centered at x_0 with broadening gamma.
+    element:
+      lineshape:
+      - lineshape(x_0)
+      - Lorentzian function
+      maximum:
+      - maximum(x_0)
+      - Maximum value of Lorentzian profile centered at x_0.
+  optionsstate:
+    description: Store multiple OptionState() objects.
+    element:
+      add_option:
+      - add_option
+      - Store info for another keyword.
+      restore:
+      - restore()
+      - Restore value and has_changed status of each keyword to saved condition.
+  optionstate:
+    description: Store the state (value and changed status) of a single option.
+    element:
+      restore:
+      - restore()
+      - Restore value and has_changed status to saved condition.
+  solverengine:
+    description: Abstract Base Class defining the API for a matrix-vector product
+      object required by solvers.
+    element:
+      compute_products:
+      - compute_products(X)
+      - Compute a Matrix * trial vector products
+      new_vector:
+      - new_vector()
+      - Return a new vector object.
+      precondition:
+      - precondition(R_k,w_k)
+      - Apply the preconditioner to a Residual vector
+      residue:
+      - residue(X,so_prop_ints)
+      - Compute residue
+      vector_axpy:
+      - vector_axpy(X,Y)
+      - Compute scaled vector addition operation a*X + Y
+      vector_copy:
+      - vector_copy()
+      - Make a copy of a vector
+      vector_dot:
+      - vector_dot(X,Y)
+      - Compute a dot product between two vectors
+      vector_scale:
+      - vector_scale(X)
+      - Scale a vector by some factor
